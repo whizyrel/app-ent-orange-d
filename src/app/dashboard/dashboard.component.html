@@ -26,24 +26,9 @@
 
     <!-- sidebar links -->
     <div class="__sidebar-nav-group d-flex m-auto px-2 py-3">
-      <a href="..." class="__sidebar-nav-link-active d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="Users">
-        <i class="fa fa-users mx-auto fa-1x"></i>
-        <p class="m-0 d-none">Users</p>
-      </a>
-
-      <a href="..." class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="Home">
-        <i class="fa fa-home mr-1 fa-1x"></i>
-        <p class="m-0 d-none">Home</p>
-      </a>
-
-      <a href="..." class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-tAdd formsoggle="tooltip" data-placement="right" title="Forms">
-        <i class="far fa-plus-square mr-1 fa-1x"></i>
-        <p class="m-0 d-none">Forms</p>
-      </a>
-
-      <a href="..." class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="List">
-        <i class="far fa-list-alt mr-1 fa-1x"></i>
-        <p class="m-0 d-none">List</p>
+      <a *ngFor="let link of sidebarLinks" [routerLink]="[link.href]" [routerLinkActive]="[__sidebar-nav-link-active]" [routerLinkActiveOptions]="{exact: true}" class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="{{ link.title }}">
+        <i class="{{ link.iconClasses }}"></i>
+        <p class="m-0 d-none">link.title</p>
       </a>
     </div>
 
