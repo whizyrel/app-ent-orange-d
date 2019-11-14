@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Varela Round';
+  src: url('./assets/fonts/varela/varela_round-regular.ttf') format('truetype');
+}
+
+:root {
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --purple: #440244;
+  --orange: #f5a63a;
+  --dark-orange: #db8206;
+  --grey-white: #b4aea426;
+  --white-shadow: #bbb6b6ed;
+  --dark-grey: #383d41;
+  --left-border-radius: 10px;
+  --link-white: #ffffffe3;
+  --link-border-radius: 10px;
+  --active-link-shadow: #e9ecef;
+  --border-radius-round: 50%;
+  --sidebar-width: 60px;
+  --top-navbar-height: 60px;
+  --main-nav-height: 50px;
+  --pane-width: 280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Varela Round'!important;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  color: var(--black);
+}
+
+a:hover {
+  color: var(--purple);
+  text-decoration: none;
+}

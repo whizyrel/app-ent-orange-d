@@ -1,0 +1,16 @@
+.gitignore filter=lfs diff=lfs merge=lfs -text
+# . filter=lfs diff=lfs merge=lfs -text
+LICENSE filter=lfs diff=lfs merge=lfs -text
+main.js filter=lfs diff=lfs merge=lfs -text
+# node_modules filter=lfs diff=lfs merge=lfs -text
+package.json filter=lfs diff=lfs merge=lfs -text
+README.md filter=lfs diff=lfs merge=lfs -text
+tslint.json filter=lfs diff=lfs merge=lfs -text
+tsconfig.json filter=lfs diff=lfs merge=lfs -text
+angular.json filter=lfs diff=lfs merge=lfs -text
+# dist filter=lfs diff=lfs merge=lfs -text
+e2e filter=lfs diff=lfs merge=lfs -text
+# nodemon.json filter=lfs diff=lfs merge=lfs -text
+package-lock.json filter=lfs diff=lfs merge=lfs -text
+src filter=lfs diff=lfs merge=lfs -text
+# nodemon.json filter=lfs diff=lfs merge=lfs -text
