@@ -1,0 +1,45 @@
+:root {
+  --sidebar-width: 60px;
+}
+
+body {
+  font-family: "Varela Round"!important;
+}
+
+.__sidebar {
+  width: var(--sidebar-width);
+}
+
+.__spinner {
+  color: var(--grey-white)!important;
+}
+
+.__search-icon, .__quick-action-icon {
+  color: var(--grey-white)!important;
+}
+
+.__user-image-mock {
+  background-color: var(--grey-white);
+}
+
+.__btn-create {
+  background-color: var(--grey-white);
+  width: 150px;
+  height: 30px;
+  box-shadow: none;
+}
+
+.__notification-icon {
+  color: var(--grey-white)!important;
+}
+
+.__notification-icon-badge {
+  background-color: var(--grey-white)!important;
+  color: var(--grey-white)!important;
+  height: 5px;
+  width: 5px;
+}
+
+.__quick-action-icon-container {
+  background-color: var(--grey-white);
+}
