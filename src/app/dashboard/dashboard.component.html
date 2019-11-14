@@ -51,34 +51,9 @@
       </div>
     </nav>
 
+    <!-- use router outlet -->
     <!-- user info pane -->
-    <div class="d-flex __user-info-pane">
-      <!-- title -->
-      <p class="m-0 w-100 text-left __user-pane-title ml-5 mt-3">You</p>
-
-      <!-- image -->
-      <div class="w-100 __user-info-pane-image-container">
-        <img src="./assets/imgs/avatar04.png" alt="image" class="m-auto d-flex __user-info-pane-image">
-      </div>
-
-      <!-- details  -->
-      <div class="mt-4 px-3">
-        <div class="w-100 d-flex __user-info-pane-details-card">
-          <p class="m-0 mt-1 ml-3 w-100 text-left __user-info-pane-details-label">Email</p>
-          <p class="m-0 w-100 mt-2 mb-2 pr-3 text-right __user-info-pane-details-text">mail@mail.co.uk</p>
-        </div>
-
-        <div class="w-100 d-flex __user-info-pane-details-card mt-4">
-          <p class="m-0 mt-1 ml-3 w-100 text-left __user-info-pane-details-label">Phone number</p>
-          <p class="m-0 w-100 mt-2 mb-2 pr-3 text-right __user-info-pane-details-text">+(234) 812 345 6901</p>
-        </div>
-
-        <div class="w-100 d-flex __user-info-pane-details-card mt-4">
-          <p class="m-0 mt-1 ml-3 w-100 text-left __user-info-pane-details-label">Address</p>
-          <p class="m-0 w-100 mt-2 mb-2 pr-3 text-right __user-info-pane-details-text">00, address street. Long road, Antartica.</p>
-        </div>
-      </div>
-    </div>
+    <app-user-details-pane></app-user-details-pane>
 
     <!-- notification pane -->
     <app-notification-pane></app-notification-pane>
