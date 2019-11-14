@@ -10,6 +10,7 @@ export class ApiUrlsService {
   get serviceUrls(): string {
     return serviceUrl;
   }
-} 
+}
 
-const serviceUrl = '';
+const _url = `localhost:4200/`;
+const serviceUrl = `${_url}/s/d`; // service/details
