@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { AppDetailsService } from './services/app-details.service';
 
+import { HttpResponse } from './interfaces/http-response';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +13,14 @@ export class AppComponent implements OnInit {
   constructor(private _appDetails: AppDetailsService) { }
 
   ngOnInit () {
-    this.getAppDetails();
+    this.getAppDetails()
+    .subscribe(
+      (data: HttpResponse) => {
+
+    },
+    (error: HttpResponse: HttpResponse) => {
+
+    });
   }
 
   private getAppDetails() {
