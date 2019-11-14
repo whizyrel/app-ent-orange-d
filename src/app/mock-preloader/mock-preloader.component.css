@@ -2,10 +2,6 @@
   --sidebar-width: 60px;
 }
 
-body {
-  font-family: "Varela Round"!important;
-}
-
 .__sidebar {
   width: var(--sidebar-width);
 }
