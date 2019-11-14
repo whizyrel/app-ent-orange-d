@@ -1,25 +1,3 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DashboardComponent } from './dashboard.component';
-
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:7bdae79d99cc0ed515cd817c4af7f28b4d4530df5c09dd9b4bfae3d63cdaf5df
+size 649

@@ -1,16 +1,3 @@
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ApiUrlsService {
-
-  constructor() { }
-
-  get serviceUrls(): string {
-    return serviceUrl;
-  }
-}
-
-const _url = `localhost:4200/`;
-const serviceUrl = `${_url}/s/d`; // service/details
+version https://git-lfs.github.com/spec/v1
+oid sha256:e97ea309d2bdee5bdc009687c8d719d6066c6f3d5fe3f317a7e3438a4e681860
+size 280

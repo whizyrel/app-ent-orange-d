@@ -1,29 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-
-import { AppDetailsService } from './services/app-details.service';
-
-import { HttpResponse } from './interfaces/http-response';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent implements OnInit {
-  constructor(private _appDetails: AppDetailsService) { }
-
-  ngOnInit () {
-    this.getAppDetails()
-    .subscribe(
-      (data: HttpResponse) => {
-
-    },
-    (error: HttpResponse: HttpResponse) => {
-
-    });
-  }
-
-  private getAppDetails() {
-    this._appDetails.getDetails();
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:77807346f351dc4bfdbd3505714479fc486e86b39466c2e456a93b38feb23b3e
+size 627
