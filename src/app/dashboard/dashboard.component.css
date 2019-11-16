@@ -1,4 +1,3 @@
-
 .__navbar {
   position: absolute;
   z-index: 5000;
@@ -146,4 +145,14 @@
 .__border-line {
   height: 1px;
   background-color: var(--orange);
+}
+
+.__pane {
+  width: var(--pane-width);
+  height: calc(100% - var(--main-nav-height));
+  z-index: 5000;
+  margin-top: var(--main-nav-height);
+  flex-direction: column;
+  position: fixed;
+  right: 0;
 }
