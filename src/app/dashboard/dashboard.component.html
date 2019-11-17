@@ -6,11 +6,15 @@
       <!-- create new button -->
     <div class="__navbar-left-group ml-auto d-flex form-inline">
       <button class="__btn-create my-auto mr-2 p-2 form-inline d-flex">create new <i class="ml-2 fas fa-angle-down __btn-create-icon"></i></button>
-      <div class="d-flex">
+
+      <a class="d-flex" [routerLink]="['/pane', {outlets: {pane: 'notification'}}]">
         <i class="far fa-bell mx-2  __notification-icon"></i>
         <span class="badge badge-danger __notification-icon-badge">1</span>
-      </div>
-      <img class="__user-image my-auto ml-2 mr-4" src="./assets/imgs/avatar5.png" alt="image">
+      </a>
+
+      <a class="d-flex" [routerLink]="['/pane', {outlets: {pane: 'user-details'}}]">
+        <img class="__user-image my-auto ml-2 mr-4" src="./assets/imgs/avatar5.png" alt="image">
+      </a>
     </div>
   </nav>
 
@@ -52,13 +56,8 @@
     </nav>
 
     <!-- use router outlet -->
-    <!-- user info pane -->
-    <app-user-details-pane></app-user-details-pane>
+    <router-outlet name='pane' (activate)="activateRt($event)" (deactivate)="deActivateRt($event)"></router-outlet>
 
-    <!-- notification pane -->
-    <app-notification-pane></app-notification-pane>
-
-    <!-- quick action -->
     <div class="d-flex ml-3 __quick-action px-3 py-2 mb-3">
       <div class="__quick-action-icon-container py-2 px-3">
         <i class="fas fa-search my-auto __quick-action-icon"></i>
