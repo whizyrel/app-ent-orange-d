@@ -23,6 +23,8 @@
   --top-navbar-height: 60px;
   --main-nav-height: 50px;
   --pane-width: 280px;
+  --light-dark-grey: #383d41cc;
+  --toolbar-height: 40px;
 }
 
 * {
