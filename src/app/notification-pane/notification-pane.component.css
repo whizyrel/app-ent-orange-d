@@ -3,11 +3,11 @@
     width: var(--pane-width);
     height: calc(100% - var(--main-nav-height));
     z-index: 5000;
-    margin-top: var(--main-nav-height);
+    /* margin-top: var(--main-nav-height); */
     flex-direction: column;
     position: fixed;
     right: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .__notification-pane-title-text {
