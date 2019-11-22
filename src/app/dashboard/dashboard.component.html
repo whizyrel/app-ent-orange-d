@@ -7,14 +7,14 @@
     <div class="__navbar-left-group ml-auto d-flex form-inline">
       <button class="__btn-create my-auto mr-2 p-2 form-inline d-flex">create new <i class="ml-2 fas fa-angle-down __btn-create-icon"></i></button>
 
-      <a class="d-flex" [routerLink]="['/pane', {outlets: {pane: 'notification'}}]">
+      <div class="d-flex" (click)="switchPanes('n')">
         <i class="far fa-bell mx-2  __notification-icon"></i>
         <span class="badge badge-danger __notification-icon-badge">1</span>
-      </a>
+      </div>
 
-      <a class="d-flex" [routerLink]="['/pane', {outlets: {pane: 'user-details'}}]">
+      <div class="d-flex" (click)="switchPanes('u')">
         <img class="__user-image my-auto ml-2 mr-4" src="./assets/imgs/avatar5.png" alt="image">
-      </a>
+      </div>
     </div>
   </nav>
 
@@ -30,7 +30,7 @@
 
     <!-- sidebar links -->
     <div class="__sidebar-nav-group d-flex m-auto px-2 py-3">
-      <a *ngFor="let link of sidebarLinks" [routerLink]="[link.href]" [routerLinkActive]="[__sidebar-nav-link-active]" [routerLinkActiveOptions]="{exact: true}" class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="{{ link.title }}">
+      <a *ngFor="let link of sidebarLinks" [routerLink]="[link.href]" [routerLinkActive]="['__sidebar-nav-link-active']" [routerLinkActiveOptions]="{exact: true}" class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="{{ link.title }}">
         <i class="{{ link.iconClasses }}"></i>
         <p class="m-0 d-none">link.title</p>
       </a>
@@ -55,8 +55,12 @@
       </div>
     </nav>
 
-    <!-- use router outlet -->
-    <router-outlet name='pane' (activate)="activateRt($event)" (deactivate)="deActivateRt($event)"></router-outlet>
+    <div class="d-flex __main-component-view">
+      <router-outlet name='path' (activate)="activateRt($event)" (deactivate)="deActivateRt($event)"></router-outlet>
+    </div>
+
+    <app-notification-pane *ngIf="pane.notification"> </app-notification-pane>
+    <app-user-details-pane *ngIf="pane.user"> </app-user-details-pane>
 
     <div class="d-flex ml-3 __quick-action px-3 py-2 mb-3">
       <div class="__quick-action-icon-container py-2 px-3">
