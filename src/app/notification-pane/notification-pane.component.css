@@ -1,13 +1,15 @@
 .__notification-pane {
-    background-color: var(--grey-white);
-    width: var(--pane-width);
-    height: calc(100% - var(--main-nav-height));
-    z-index: 5000;
-    /* margin-top: var(--main-nav-height); */
-    flex-direction: column;
-    position: fixed;
-    right: 0;
-    overflow-y: auto;
+  background-color: #b4aea4;
+  width: var(--pane-width);
+  height: calc(100% - var(--main-nav-height));
+  z-index: 5000;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  overflow-y: auto;
+  color: #000000e6;
 }
 
 .__notification-pane-title-text {
@@ -39,7 +41,7 @@
 
 .__notification-item-icon {
   font-size: 1.2rem!important;
-  color: var(--orange);
+  color: #0000009e;
 }
 
 .__notification-pane-item-text {
