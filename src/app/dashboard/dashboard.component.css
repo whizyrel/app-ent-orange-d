@@ -59,7 +59,7 @@
   background-color: var(--white);
   width: var(--sidebar-width);
   z-index: 1000;
-  box-shadow: .001px 0 12px .05px var(--white-shadow);
+  box-shadow: 0 0 3px 0px var(--white-shadow);
   flex-direction: column;
 }
 
