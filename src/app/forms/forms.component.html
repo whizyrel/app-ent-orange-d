@@ -5,25 +5,29 @@
   </div>
 
   <!-- items here -->
-  <div class="d-flex __list-container-items w-100">
-    <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon"></i>
-    <div class="ml-3 d-flex __list-container-items-main-details">
-      <span class="mt-2 __list-container-items-main-details-title">Form A</span>
-      <span class="text-truncate d-flex"> name, blah, de, blah, blah blah</span>
+  <div *ngIf="forms !== undefined; else formElseBlock">
+    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100">
+      <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon"></i>
+      <div class="ml-3 d-flex __list-container-items-main-details">
+        <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
+        <span class="text-truncate d-flex"> name, blah, de, blah, blah blah</span>
+      </div>
+      <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons"></i>
+      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
     </div>
-    <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons"></i>
-    <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
   </div>
 
-  <div class="d-flex __list-container-items w-100">
-    <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon"></i>
-    <div class="ml-3 d-flex __list-container-items-main-details">
-      <span class="mt-2 __list-container-items-main-details-title">Form B</span>
-      <span class="text-truncate d-flex"> name, blah, de, blah, blah blah</span>
+  <ng-template #formElseBlock>
+    <div *ngFor="let mock of mocks" class="d-flex __list-container-items w-100 mb-2">
+      <div class="d-flex my-auto ml-3 __icon"></div>
+      <div class="ml-3 d-flex __list-container-items-main-details">
+        <div class="mt-2 mr-2 __list-container-items-main-details-title-mock"></div>
+        <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
+      </div>
+      <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons-mock"></i>
+      <i class="fas fa-trash fa-1x mr-3 my-auto __list-container-items-action-icons-mock"></i>
     </div>
-    <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons"></i>
-    <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
-  </div>
+  </ng-template>
 </div>
 
 <div class="d-flex __list-details-container">

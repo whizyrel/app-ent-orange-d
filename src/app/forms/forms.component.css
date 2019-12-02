@@ -105,6 +105,29 @@
   color: var(--purple);
 }
 
+/* mock */
+.__list-container-items-main-details-title-mock,
+.__list-container-items-main-details-list-mock {
+  background-color: var(--light);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.__list-container-items-main-details-title-mock {
+  height: 15px;
+}
+
+.__list-container-items-main-details-list-mock {
+  height: 10px;
+}
+
+.__list-container-items-action-icons-mock {
+  color: var(--light)!important;
+}
+/* mock */
+
 .__list-details-container {
   margin-left: var(--pane-width);
   position: fixed;
