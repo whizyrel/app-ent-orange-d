@@ -15,6 +15,10 @@
       <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons"></i>
       <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
     </div>
+
+    <div *ngIf="forms.length === 0" class="d-flex w-100">
+      <span class="mx-auto my-auto bold-text my-5">List is empty...</span>
+    </div>
   </div>
 
   <ng-template #formElseBlock>
