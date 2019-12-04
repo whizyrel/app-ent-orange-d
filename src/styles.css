@@ -32,6 +32,9 @@
   box-sizing: border-box;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 body {
   font-family: 'Varela Round'!important;
   margin: 0;
@@ -49,6 +52,37 @@ a:hover {
   color: var(--purple);
   text-decoration: none;
 }
+
+/* mock */
+.__list-container-items-main-details-title-mock,
+.__list-container-items-main-details-list-mock {
+  background-color: var(--mock-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.__list-container-items-main-details-title-mock {
+  height: 15px;
+}
+
+.__list-container-items-main-details-list-mock {
+  height: 10px;
+}
+
+.__list-container-items-action-icons-mock {
+  color: var(--mock-color)!important;
+}
+
+.__icon {
+  width: 2.3rem;
+  height: 2rem;
+  background-color: var(--mock-color);
+  border-radius: 50%;
+}
+
+/* mock */
 
 /* scrollbar */
 /* width */
