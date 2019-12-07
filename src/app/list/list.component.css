@@ -56,6 +56,7 @@
 
 .__form-properties-item {
   width: inherit;
+  cursor: pointer;
 }
 
 .__form-properties-item:hover {

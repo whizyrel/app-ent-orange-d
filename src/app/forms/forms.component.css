@@ -53,6 +53,7 @@
 .__list-container-items {
   height: 50px;
   flex-direction: row;
+  cursor: pointer;
 }
 
 /* mock */
