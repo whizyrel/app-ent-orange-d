@@ -12,7 +12,8 @@
   height: calc(100% - var(--main-nav-height) - var(--top-navbar-height));
 }
 
-.__list-container {
+.__list-container,
+.__list-container-items-main-details {
   flex-direction: column;
 }
 
