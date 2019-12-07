@@ -6,7 +6,7 @@
 
   <!-- items here -->
   <div *ngIf="forms !== undefined; else formElseBlock">
-    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100" (click)="showFormDetails(form.id)">
+    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100" (click)="showFormDetails(form.id, form.title)">
       <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon"></i>
       <div class="ml-3 d-flex __list-container-items-main-details">
         <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
@@ -34,4 +34,4 @@
   </ng-template>
 </div>
 
-<app-list [id]="id"></app-list>
+<app-list *ngIf="forms !== undefined && forms.length > 0" [id]="id" [ft]="ft"></app-list>
