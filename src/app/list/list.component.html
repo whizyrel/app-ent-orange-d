@@ -6,31 +6,15 @@
 
   <div class="__form-properties-container d-flex mx-3 mb-2">
     <!-- more details -->
-    <div class="d-flex __form-properties-item py-2 pl-3">
-      <div class="d-flex __form-properties-details">
-        <span>Column: Name, Phone Number, Use... </span>
-        <span>Type</span>
+    <div *ngIf="list != undefined; else listElseBlock;">
+      <div class="d-flex __form-properties-item py-2 pl-3">
+        <div class="d-flex __form-properties-details">
+          <span> {{ list.key }} </span>
+          <span>{{ list.type }}</span>
+        </div>
+        <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons"></i>
+        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons"></i>
       </div>
-      <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons"></i>
-      <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons"></i>
-    </div>
-
-    <div class="d-flex __form-properties-item py-2 pl-3">
-      <div class="d-flex __form-properties-details">
-        <span>Column: Name, Phone Number, Use... </span>
-        <span>Type</span>
-      </div>
-      <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons"></i>
-      <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons"></i>
-    </div>
-
-    <div class="d-flex __form-properties-item py-2 pl-3">
-      <div class="d-flex __form-properties-details">
-        <span>Column: Name, Phone Number, Use... </span>
-        <span>Type</span>
-      </div>
-      <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons"></i>
-      <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons"></i>
     </div>
 
     <div class="d-flex __form-properties-item py-2 pl-3">
