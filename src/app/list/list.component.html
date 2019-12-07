@@ -15,15 +15,21 @@
         <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons"></i>
         <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons"></i>
       </div>
+
+      <div *ngIf="lists.length === 0" class="d-flex py-3 w-100">
+        <span class="mx-auto bold-text">List is empty...</span>
+      </div>
     </div>
 
-    <div class="d-flex __form-properties-item py-2 pl-3">
-      <div class="d-flex __list-container-items-main-details">
-        <div class="mt-2 mr-2 __list-container-items-main-details-title-mock w-100"></div>
-        <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
+    <ng-template #listElseBlock>
+      <div class="d-flex __form-properties-item py-2 pl-3">
+        <div class="d-flex __list-container-items-main-details">
+          <div class="mt-2 mr-2 __list-container-items-main-details-title-mock w-100"></div>
+          <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
+        </div>
+        <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons-mock"></i>
+        <i class="fas fa-trash fa-1x mr-3 my-auto __list-container-items-action-icons-mock"></i>
       </div>
-      <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons-mock"></i>
-      <i class="fas fa-trash fa-1x mr-3 my-auto __list-container-items-action-icons-mock"></i>
-    </div>
+    </ng-template>
   </div>
 </div>

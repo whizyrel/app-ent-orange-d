@@ -13,9 +13,14 @@
 }
 
 .__list-details-container,
+.__list-container-items-main-details,
 .__form-properties-container,
 .__form-properties-details {
   flex-direction: column;
+}
+
+.__list-container-items-main-details {
+  width: 190px;
 }
 
 .__form-properties-toolbar {
