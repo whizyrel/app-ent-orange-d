@@ -6,8 +6,8 @@
 
   <div class="__form-properties-container d-flex mx-3 mb-2">
     <!-- more details -->
-    <div *ngIf="list != undefined; else listElseBlock;">
-      <div class="d-flex __form-properties-item py-2 pl-3">
+    <div *ngIf="lists != undefined; else listElseBlock;">
+      <div *ngFor="let list of lists" class="d-flex __form-properties-item py-2 pl-3">
         <div class="d-flex __form-properties-details">
           <span> {{ list.key }} </span>
           <span>{{ list.type }}</span>
