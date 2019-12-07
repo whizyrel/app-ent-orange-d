@@ -1,7 +1,7 @@
 <div class="d-flex __list-details-container">
-  <div class="d-flex __form-properties-toolbar">
+  <div class="d-flex __form-properties-toolbar" (mouseover)="showEl(icon)" (mouseleave)="hideEl(icon)">
     <span class="text-uppercase ml-3 my-auto __form-properties-toolbar-title">properties</span>
-    <i class="fa fa-plus mr-3 my-auto ml-auto __form-properties-toolbar-add-btn"></i>
+    <i class="fa fa-plus mr-3 my-auto ml-auto __form-properties-toolbar-add-btn d-none" #icon></i>
   </div>
 
   <div class="__form-properties-container d-flex mx-3 mb-2">

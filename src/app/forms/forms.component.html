@@ -1,7 +1,7 @@
 <div class="d-flex __list-container">
-  <div class="d-flex __list-container-toolbar">
+  <div class="d-flex __list-container-toolbar" (mouseover)="showEl(icon)" (mouseleave)="hideEl(icon)">
     <span class="ml-3 my-auto __list-container-toolbar-text">Forms</span>
-    <i class="fas fa-plus fa-1x my-auto ml-auto  __list-container-toolbar-add-btn mr-4"></i>
+    <i class="fas fa-plus fa-1x my-auto ml-auto  __list-container-toolbar-add-btn mr-4 d-none" #icon></i>
   </div>
 
   <!-- items here -->
