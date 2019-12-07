@@ -26,6 +26,12 @@
   --main-nav-height: 40px;
   --pane-width: 280px;
   --toolbar-height: 40px;
+  --background-color: #f6f8fc;
+  --badge-border-radius: 5px;
+  --badge-height: 120px;
+  --badge-min-width: 440px;
+  --badge-width: 75%;
+  --dark-blue-1x: #0e5cd6;
 }
 
 * {
