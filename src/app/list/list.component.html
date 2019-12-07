@@ -6,7 +6,7 @@
 
   <div class="__form-properties-container d-flex mx-3 mb-2">
     <!-- more details -->
-    <div *ngIf="lists != undefined; else listElseBlock;">
+    <div *ngIf="lists !== undefined; else listElseBlock;">
       <div *ngFor="let list of lists" class="d-flex __form-properties-item py-2 pl-3">
         <div class="d-flex __form-properties-details">
           <span> {{ list.key }} </span>
@@ -22,7 +22,7 @@
     </div>
 
     <ng-template #listElseBlock>
-      <div class="d-flex __form-properties-item py-2 pl-3">
+      <div *ngFor="let mock of mocks" class="d-flex __form-properties-item py-2 pl-3">
         <div class="d-flex __list-container-items-main-details">
           <div class="mt-2 mr-2 __list-container-items-main-details-title-mock w-100"></div>
           <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
