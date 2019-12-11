@@ -103,7 +103,7 @@
 
 .__main-navigation-tab-link {
   height: var(--main-nav-height);
-  width: 70px;
+  min-width: 70px;
   text-align: center;
   color: var(--purple);
   /* border-right: 3px thin var(--purple); */

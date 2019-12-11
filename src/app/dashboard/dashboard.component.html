@@ -30,7 +30,7 @@
 
     <!-- sidebar links -->
     <div class="__sidebar-nav-group d-flex m-auto px-2 py-3">
-      <a *ngFor="let link of sidebarLinks" [routerLink]="[link.href]" [routerLinkActive]="['__sidebar-nav-link-active']" [routerLinkActiveOptions]="{exact: true}" class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="{{ link.title }}">
+      <a *ngFor="let link of sidebarLinks" [routerLink]="[link.href]" [routerLinkActive]="['__sidebar-nav-link-active']" [routerLinkActiveOptions]="{exact: true}" class="d-flex form-inline m-auto px-2 py-3 justify-content-center" data-toggle="tooltip" data-placement="right" title="{{ link.title }}" (click)="menuClicked(link.title)">
         <i class="{{ link.iconClasses }}"></i>
         <p class="m-0 d-none">link.title</p>
       </a>
@@ -47,9 +47,9 @@
     <!-- navigation path -->
     <nav class="__main-navigation-navbar d-flex">
       <div class="d-flex mr-auto ml-5">
-        <a href="..." class="__main-navigation-tab-link form-inline d-flex px-2">
-          <i class="mr-2 fa fa-shopping-cart"></i>
-          <p class="m-0 __main-navigation-tab-link-text">List</p>
+        <a *ngFor="let topbarLink of topbarLinks;" href="{{ topbarLink.href }}" class="__main-navigation-tab-link form-inline d-flex px-2">
+          <i class="{{ topbarLink.iconClasses }}"></i>
+          <p class="m-0 __main-navigation-tab-link-text">{{ topbarLink.title }}</p>
           <p class="m-0 __tab-active-ribbon"></p>
         </a>
       </div>
