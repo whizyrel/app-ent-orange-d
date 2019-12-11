@@ -62,6 +62,10 @@ a:hover {
   text-decoration: none;
 }
 
+button:focus {
+  outline: 0!important;
+}
+
 /* mock */
 .__list-container-items-main-details-title-mock,
 .__list-container-items-main-details-list-mock {
