@@ -20,6 +20,8 @@
   --mock-color: #ecececfb;
   --active-link-shadow: #e9ecef;
   --light-dark-grey: #383d41cc;
+  --background-color: #f6f8fc;
+  --dark-blue-1x: #0e5cd6;
   --left-border-radius: 10px;
   --link-border-radius: 10px;
   --border-radius-round: 50%;
@@ -28,12 +30,11 @@
   --main-nav-height: 40px;
   --pane-width: 280px;
   --toolbar-height: 40px;
-  --background-color: #f6f8fc;
   --badge-border-radius: 5px;
   --badge-height: 120px;
   --badge-min-width: 440px;
   --badge-width: 75%;
-  --dark-blue-1x: #0e5cd6;
+  --dialog-border-radius: 8px;
 }
 
 * {
