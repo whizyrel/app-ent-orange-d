@@ -95,7 +95,7 @@
 .__main-navigation-navbar {
   background-color: var(--white);
   height: var(--main-nav-height);
-  z-index: 5000;
+  z-index: 1000;
   position: absolute;
   width: calc(100% - var(--sidebar-width));
   border-bottom: .5px solid #343a402e;
