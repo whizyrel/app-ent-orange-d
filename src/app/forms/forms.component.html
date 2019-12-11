@@ -6,14 +6,14 @@
 
   <!-- items here -->
   <div *ngIf="forms !== undefined; else formElseBlock">
-    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100" (click)="showFormDetails(form.id, form.title)">
-      <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon"></i>
+    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100" (click)="showFormDetails(form.id, form.title)" (mouseover)="showItemIcons(parentItem)" (mouseleave)="hideItemIcons(parentItem)" #parentItem>
+      <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon d-none"></i>
       <div class="ml-3 d-flex __list-container-items-main-details">
         <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
         <span class="text-truncate d-flex"> {{ form.key.join(', ') }} </span>
       </div>
-      <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons"></i>
-      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
+      <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons d-none"></i>
+      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons d-none"></i>
     </div>
 
     <div *ngIf="forms.length === 0" class="d-flex w-100">
