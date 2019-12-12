@@ -25,6 +25,7 @@
 .__dialog-action-container {
   flex-direction: row;
   height: 60px;
+  color: var(--white);
 }
 
 .__dialog-action-btn-left {
