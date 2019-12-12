@@ -1,21 +1,33 @@
 <div class="d-flex __dialog-container __br-brl __br-trl">
   <div class="d-flex w-100 __vector-background __br-trl"></div>
-  <div class="mt-2">
-    <mat-form-field appearance="outline">
-      <mat-label>Give it a Name, say Interest Colector</mat-label>
-      <input matInput placeholder="Placeholder">
+
+  <span class="__bold-text mt-4 ml-5">{{ this.action }} Form</span>
+
+  <form [formGroup]="addForm" class="mt-4 mx-3">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Form Title</mat-label>
+      <input matInput formControlName="title" placeholder="Form Title">
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
+      <mat-hint>Give it a title, say Product Users Interest (PUI)</mat-hint>
+      <mat-error *ngIf="status.title.invalid"> {{ getErrorMessage.titleError() }} </mat-error>
     </mat-form-field>
-  </div>
+
+    <mat-form-field class="mt-3 w-100" appearance="outline">
+      <mat-label>Select permission level</mat-label>
+      <mat-select placeholder="Permission Level" required [formControl]="status.permissionLevel">
+        <mat-option *ngFor="let permission of permissions" [value]="permission.level">{{ permission.level }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="status.permissionLevel.invalid"> {{ getErrorMessage.permissionLevelError() }} </mat-error>
+    </mat-form-field>
+  </form>
 
   <div class="d-flex w-100 mt-auto __dialog-action-container __br-brl">
-    <div class="d-flex w-50 __dialog-action-btn-left __br-bl">
-      <span class="m-auto bold-text">Ok</span>
+    <div class="d-flex w-50 __dialog-action-btn-left __br-bl" (click)="submit()">
+      <span class="m-auto __bold-text">Ok</span>
     </div>
 
     <div class="d-flex w-50 __dialog-action-btn-right __br-br" (click)="closeDialog()">
-      <span class="m-auto bold-text">Cancel</span>
+      <span class="m-auto __bold-text">Cancel</span>
     </div>
   </div>
 </div>
