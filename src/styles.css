@@ -101,7 +101,7 @@ mat-dialog-container {
   border-radius: var(--dialog-border-radius)!important;
   overflow: hidden!important;
   outline: 0;
-  box-shadow: none!important;
+  /* box-shadow: none!important; */
 }
 
 .__dialog-container {
@@ -111,7 +111,7 @@ mat-dialog-container {
   min-width: 320px;
   /* max-width: 400px */
   background-color: var(--white);
-  box-shadow: 0 0 3px 0 var(--active-link-shadow);
+  /* box-shadow: 0 0 3px 0 var(--active-link-shadow); */
   flex-direction: column;
   border-radius: var(--dialog-border-radius)!important;
   z-index: 5000;
