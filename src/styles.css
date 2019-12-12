@@ -114,6 +114,38 @@ mat-dialog-container {
   border-radius: var(--dialog-border-radius)!important;
 }
 
+/* library */
+.__bold-text {
+  font-weight: 600;
+}
+
+.__br-trl {
+  border-top-left-radius: var(--dialog-border-radius);
+  border-top-right-radius: var(--dialog-border-radius);
+}
+
+.__br-brl {
+  border-bottom-left-radius: var(--dialog-border-radius);
+  border-bottom-right-radius: var(--dialog-border-radius);
+}
+
+.__br-tr {
+  border-top-right-radius: var(--dialog-border-radius);
+}
+
+.__br-tl{
+  border-top-left-radius: var(--dialog-border-radius);
+}
+
+.__br-br {
+  border-bottom-right-radius: var(--dialog-border-radius);
+}
+
+.__br-bl{
+  border-bottom-left-radius: var(--dialog-border-radius);
+}
+/* library */
+
 /* mock */
 
 /* scrollbar */
