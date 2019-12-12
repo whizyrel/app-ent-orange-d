@@ -118,6 +118,10 @@ mat-dialog-container {
   position: absolute;
 }
 
+.__mx-vw-33 {
+  max-width: 33vw!important;
+}
+
 /* library */
 .__bold-text {
   font-weight: 600;
