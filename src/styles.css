@@ -101,17 +101,13 @@ mat-dialog-container {
   border-radius: var(--dialog-border-radius)!important;
   overflow: hidden!important;
   outline: 0;
-  /* box-shadow: none!important; */
+  width: 0!important;
+  height: 0!important;
 }
 
 .__dialog-container {
-  /* height: 80%; */
   max-height: 80%;
-  /* width: 350px; */
   min-width: 320px;
-  /* max-width: 400px */
-  background-color: var(--white);
-  /* box-shadow: 0 0 3px 0 var(--active-link-shadow); */
   flex-direction: column;
   border-radius: var(--dialog-border-radius)!important;
   z-index: 5000;
