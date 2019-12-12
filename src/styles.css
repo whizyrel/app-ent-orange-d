@@ -105,13 +105,17 @@ mat-dialog-container {
 }
 
 .__dialog-container {
-  height: 100%;
-  width: 350px;
+  /* height: 80%; */
+  max-height: 80%;
+  /* width: 350px; */
   min-width: 320px;
+  /* max-width: 400px */
   background-color: var(--white);
   box-shadow: 0 0 3px 0 var(--active-link-shadow);
   flex-direction: column;
   border-radius: var(--dialog-border-radius)!important;
+  z-index: 5000;
+  position: absolute;
 }
 
 /* library */
