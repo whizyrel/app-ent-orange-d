@@ -10,7 +10,7 @@
       <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon d-none"></i>
       <div class="ml-3 d-flex __list-container-items-main-details" (click)="showFormDetails(form.id, form.title)" >
         <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
-        <span class="text-truncate d-flex"> {{ form?.key.join(', ') }} </span>
+        <span class="text-truncate d-flex"> {{ form?.key.join(', ') ? form?.key.join(', ') : 'no properties added...'}} </span>
       </div>
       <i class="fa fa-pen ml-auto mr-2 my-auto fa-1x __list-container-items-action-icons d-none"></i>
       <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons d-none" (click)="deleteForm(form.id)"></i>
