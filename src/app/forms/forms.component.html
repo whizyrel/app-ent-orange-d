@@ -6,9 +6,9 @@
 
   <!-- items here -->
   <div *ngIf="forms !== undefined; else formElseBlock">
-    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100" (click)="showFormDetails(form.id, form.title)" (mouseover)="showItemIcons(parentItem)" (mouseleave)="hideItemIcons(parentItem)" #parentItem>
+    <div *ngFor="let form of forms" class="d-flex __list-container-items w-100" (mouseover)="showItemIcons(parentItem)" (mouseleave)="hideItemIcons(parentItem)" #parentItem>
       <i class="fa fa-list fa-1x my-auto ml-3 __list-container-items-icon d-none"></i>
-      <div class="ml-3 d-flex __list-container-items-main-details">
+      <div class="ml-3 d-flex __list-container-items-main-details" (click)="showFormDetails(form.id, form.title)" >
         <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
         <span class="text-truncate d-flex"> {{ form?.key.join(', ') }} </span>
       </div>
