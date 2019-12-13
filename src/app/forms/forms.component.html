@@ -1,7 +1,7 @@
 <div class="d-flex __list-container">
   <div class="d-flex __list-container-toolbar" (mouseover)="showEl(icon)" (mouseleave)="hideEl(icon)">
     <span class="ml-3 my-auto __list-container-toolbar-text">Forms</span>
-    <i class="fas fa-plus fa-1x my-auto ml-auto  __list-container-toolbar-add-btn mr-4 d-none" #icon (click)="openAddDialog()"></i>
+    <i class="fas fa-plus fa-1x my-auto ml-auto  __list-container-toolbar-add-btn mr-4 d-none" data-toggle="tooltip" data-placement="top" title="add a new form" #icon (click)="openAddDialog()"></i>
   </div>
 
   <!-- items here -->
@@ -12,8 +12,8 @@
         <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
         <span class="text-truncate d-flex"> {{ form?.key.join(', ') ? form?.key.join(', ') : 'no properties added...'}} </span>
       </div>
-      <i class="fa fa-pen ml-auto mr-2 my-auto fa-1x __list-container-items-action-icons d-none" (click)="editForm(form.title, form.level, form.id)"></i>
-      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons d-none" (click)="deleteForm(form.id)"></i>
+      <i class="fa fa-pen ml-auto mr-2 my-auto fa-1x __list-container-items-action-icons d-none" (click)="editForm(form.title, form.level, form.id)" data-toggle="tooltip" data-placement="top" title="edit"></i>
+      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons d-none" (click)="deleteForm(form.id)" data-toggle="tooltip" data-placement="top" title="delete"></i>
     </div>
 
     <div *ngIf="forms.length === 0" class="d-flex w-100">

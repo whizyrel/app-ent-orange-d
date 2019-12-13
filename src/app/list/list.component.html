@@ -1,7 +1,7 @@
 <div class="d-flex __list-details-container">
   <div class="d-flex __form-properties-toolbar" (mouseover)="showEl(icon)" (mouseleave)="hideEl(icon)">
     <span class="text-uppercase ml-3 my-auto __form-properties-toolbar-title">properties</span>
-    <i class="fa fa-plus mr-3 my-auto ml-auto __form-properties-toolbar-add-btn d-none" #icon></i>
+    <i class="fa fa-plus mr-3 my-auto ml-auto __form-properties-toolbar-add-btn d-none" #icon data-toggle="tooltip" data-placement="top" title="add properties"></i>
   </div>
 
   <div class="__form-properties-container d-flex mx-3 mb-2">
@@ -12,8 +12,8 @@
           <span> {{ list.key }} </span>
           <span>{{ list.type }}</span>
         </div>
-        <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons d-none"></i>
-        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons d-none"></i>
+        <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="edit"></i>
+        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="delete"></i>
       </div>
 
       <div *ngIf="lists.length === 0" class="d-flex py-3 w-100">
