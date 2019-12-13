@@ -15,7 +15,7 @@
     <mat-form-field class="mt-3 w-100" appearance="outline">
       <mat-label>Select permission level</mat-label>
       <mat-select placeholder="Permission Level" required [formControl]="status.permissionLevel">
-        <mat-option *ngFor="let permission of permissions" [value]="permission.level">{{ permission.level }}</mat-option>
+        <mat-option *ngFor="let permission of permissions" (click)="setPermissionId(permission.id)" [value]="permission.level">{{ permission.level }}</mat-option>
       </mat-select>
       <mat-error *ngIf="status.permissionLevel.invalid"> {{ getErrorMessage.permissionLevelError() }} </mat-error>
     </mat-form-field>

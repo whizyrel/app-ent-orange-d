@@ -12,7 +12,7 @@
         <span class="mt-2 __list-container-items-main-details-title"> {{ form.title }} </span>
         <span class="text-truncate d-flex"> {{ form?.key.join(', ') ? form?.key.join(', ') : 'no properties added...'}} </span>
       </div>
-      <i class="fa fa-pen ml-auto mr-2 my-auto fa-1x __list-container-items-action-icons d-none" (click)="editFormTitle(form.id, form.level)"></i>
+      <i class="fa fa-pen ml-auto mr-2 my-auto fa-1x __list-container-items-action-icons d-none" (click)="editForm(form.title, form.level, form.id)"></i>
       <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons d-none" (click)="deleteForm(form.id)"></i>
     </div>
 
