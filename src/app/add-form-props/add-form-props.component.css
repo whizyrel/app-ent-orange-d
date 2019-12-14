@@ -1,0 +1,29 @@
+.__dialog-container {
+  height: 100%;
+  width: 350px;
+  min-width: 320px;
+  background-color: var(--white);
+  /* box-shadow: 0 0 5px 2px var(--active-link-shadow); */
+  flex-direction: column;
+}
+
+.__vector-background {
+  width: inherit;
+  height: 40%;
+  background-image: url('../../assets/imgs/1.jpg');
+  background-size: cover;
+}
+
+.__dialog-action-container {
+  flex-direction: row;
+  height: 60px;
+  color: var(--white);
+}
+
+.__dialog-action-btn-left {
+  background-color: #515151;
+}
+
+.__dialog-action-btn-right {
+  background-color: #444444;
+}

@@ -1,3 +1,35 @@
-<p>
-  add-form-props works!
-</p>
+<div class="d-flex __dialog-container __br-brl __br-trl">
+  <div class="d-flex w-100 __vector-background __br-trl"></div>
+
+  <span class="__bold-text mt-2 ml-5">{{ this.action }} Properties</span>
+
+  <form [formGroup]="addFormProps" class="mt-2 mx-3">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>What question should be asked?</mat-label>
+      <input matInput formControlName="key" placeholder="Form Key">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>An example is store holder's name</mat-hint>
+      <mat-error *ngIf="status.key.invalid"> {{ getErrorMessage.keyError() }} </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="mt-2 w-100" appearance="outline">
+      <mat-label>What should the type of response be?</mat-label>
+      <mat-select placeholder="Permission Level" required [formControl]="status.type">
+        <mat-option value="text"> Text </mat-option>
+        <mat-option value="number"> Number </mat-option>
+      </mat-select>
+      <mat-hint>expected response data type, example is text, number</mat-hint>
+      <mat-error *ngIf="status.type.invalid"> {{ getErrorMessage.typeError() }} </mat-error>
+    </mat-form-field>
+  </form>
+
+  <div class="d-flex w-100 mt-auto __dialog-action-container __br-brl">
+    <div class="d-flex w-50 __dialog-action-btn-left __br-bl" (click)="submit()">
+      <span class="m-auto __bold-text">Add</span>
+    </div>
+
+    <div class="d-flex w-50 __dialog-action-btn-right __br-br" (click)="closeDialog()">
+      <span class="m-auto __bold-text">Cancel</span>
+    </div>
+  </div>
+</div>
