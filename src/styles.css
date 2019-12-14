@@ -123,6 +123,11 @@ mat-dialog-container {
   font-weight: 600;
 }
 
+.__grey-text {
+  color: grey;
+  font-weight: 500;
+}
+
 .__br-trl {
   border-top-left-radius: var(--dialog-border-radius);
   border-top-right-radius: var(--dialog-border-radius);
