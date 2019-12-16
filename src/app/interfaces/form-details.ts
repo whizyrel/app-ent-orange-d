@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf217d9c6a1709e6327693d4a10fc52c4bfaf44aab66e787995faa8a2a1fbca8
-size 371
+export interface FormDetails {
+  title: string;
+  permissionid: string;
+  clientid: string;
+  id: string;
+  key: Array<string>;
+  level:  string;
+};
+
+export interface FormTitle {
+  title?: string;
+  permissionLevel?: string;
+  permissionId?: string;
+  id?: string;
+};
+
+export interface FormRecords {
+  key?: string;
+  type?: string;
+  id?: string;
+  form_id?: string;
+};

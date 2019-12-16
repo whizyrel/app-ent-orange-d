@@ -1,3 +1,115 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19d666593273cf77d26c13318b007c5913120289a0003fb311b35c22deb6f161
-size 2673
+import { Component, OnInit, AfterContentInit, OnChanges, Input } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import { FormService } from '../services/form.service';
+import { DialogService } from '../services/dialog.service';
+
+import { HttpResponse } from '../interfaces/http-response';
+import { FormDetails, FormRecords } from '../interfaces/form-details';
+
+import { AddFormPropsComponent } from '../add-form-props/add-form-props.component';
+
+@Component({
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
+})
+export class ListComponent implements OnInit,
+AfterContentInit, OnChanges {
+  @Input() props: FormDetails;
+
+  public mocks: number[] = [1,2,3,4,5,6,7];
+  public lists: Array<FormRecords>;
+
+  constructor(
+    private _forms: FormService,
+    private _dialog: DialogService
+  ) { }
+
+  ngOnInit() { }
+
+  ngOnChanges() {
+    if (
+      this.props !== undefined
+      ) {
+      // get list
+      this.getList();
+    }
+  }
+
+  ngAfterContentInit() { }
+
+  public deleteProperty(): void { }
+
+  public editProperty(prop: FormRecords): void {
+    const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog.openDialog(
+      {
+        add: false, edit: true,
+        props: {
+          title: this.props.title,
+          id: this.props.id,
+          key: prop.key, type: prop.type
+        }
+      },
+      AddFormPropsComponent
+    );
+
+    dialogRef.afterClosed().subscribe(
+      (data) => {
+        this.getList();
+      }
+    );
+  }
+
+  public addProperties(): void {
+    const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog.openDialog(
+      {
+        add: true, edit: false,
+        props: {title: this.props.title}
+      },
+      AddFormPropsComponent
+    );
+
+    dialogRef.afterClosed().subscribe(
+      (data) => {
+        this.getList();
+      }
+    );
+  }
+
+  private getList(): void {
+    this._forms
+    .getFormDetails(this.props.id, this.props.title)
+    .subscribe(
+      (data: HttpResponse) => {
+        console.log({data});
+        this.lists = data.rows;
+      },
+      (error: HttpResponse) => {
+        console.log({error});
+        this.lists = [];
+      }
+    );
+  }
+
+  public showItemIcons(el: Element): void {
+    this.showEl(el.children[1]);
+    this.showEl(el.children[2]);
+  }
+
+  public hideItemIcons(el: Element): void {
+    this.hideEl(el.children[1]);
+    this.hideEl(el.children[2]);
+  }
+
+  public showEl(el): void {
+    if (el.classList.contains('d-none')) {
+      el.classList.replace('d-none', 'd-flex');
+      return;
+    }
+  }
+
+  public hideEl(el): void {
+    el.classList.replace('d-flex', 'd-none');
+  }
+}
