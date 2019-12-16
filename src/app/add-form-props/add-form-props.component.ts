@@ -43,7 +43,6 @@ export class AddFormPropsComponent implements OnInit {
         (data: HttpResponse) => {
           console.log({data});
           this._snackbar.showSnackBar(data.message);
-           // reset form field to ''
         },
         (error: HttpResponse) => {
           console.log({error});
