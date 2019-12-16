@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7e6420975dc10d2a4bef3cc710670ed6f79f362ba065cf45ea0e7e735c273f83
-size 308
+export interface FormUrls {
+  list: string;
+  add: string;
+  edit: string;
+  delete: string;
+  changePermission: string;
+  addPermission: string;
+  deletePermission: string;
+  listPermissions: string;
+  addProperty: string;
+  editProperty: string;
+  listProperties: string;
+  deleteProperty: string;
+}

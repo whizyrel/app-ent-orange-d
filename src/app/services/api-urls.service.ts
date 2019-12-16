@@ -29,8 +29,8 @@ const formUrls: FormUrls = {
   listPermissions: `${_url}/f/p/l`,
   addPermission: `${_url}/f/p/a`,
   deletePermission: `${_url}/f/p/d`,
-  addProperties: `${_url}/f/a/p`,
-  editProperties: `${_url}/f/e/p`,
+  addProperty: `${_url}/f/a/p`,
+  editProperty: `${_url}/f/e/p`,
   listProperties: `${_url}/f/l/p`, // query
-  deleteProperties: `${_url}/f/d/p`
+  deleteProperty: `${_url}/f/d/p`
 };
