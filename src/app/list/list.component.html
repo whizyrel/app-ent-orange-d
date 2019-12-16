@@ -10,10 +10,10 @@
       <div *ngFor="let list of lists" class="d-flex __form-properties-item py-2 pl-3" (mouseover)="showItemIcons(parentItem)" (mouseleave)="hideItemIcons(parentItem)" #parentItem>
         <div class="d-flex __form-properties-details">
           <span> {{ list.key }} </span>
-          <span>{{ list.type }}</span>
+          <span> {{ list.type }} </span>
         </div>
-        <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="edit"></i>
-        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="delete"></i>
+        <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="edit" (click)="editProperty(list)"></i>
+        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="delete" (click)="deleteProperty(list)"></i>
       </div>
 
       <div *ngIf="lists.length === 0" class="d-flex py-3 w-100">
