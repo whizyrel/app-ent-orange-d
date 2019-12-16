@@ -47,7 +47,7 @@ AfterContentInit, OnChanges {
         add: false, edit: true,
         props: {
           title: this.props.title,
-          id: this.props.id,
+          id: prop.id,
           key: prop.key, type: prop.type
         }
       },
