@@ -18,10 +18,22 @@ export class FormService {
     private _http: HttpClient,
     private _apiUrls: ApiUrlsService,
     private _appDetails: AppDetailsService
-  ) { }
+  ) { }itle
+
+  public deleteFormProperty(id: string): Observable<Object> {
+    const _url: string = `${this._apiUrls.formUrls.deleteProperty}/${this.getClientName}/${id}`;
+
+    return this._http.delete<Object>(_url, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      observe: 'body',
+      responseType: 'json',
+    });
+  }
 
   public editFormProperty(details: any): Observable<Object> {
-    const _url: string = `${this._apiUrls.formUrls.editProperties}/${this.getClientName}`;
+    const _url: string = `${this._apiUrls.formUrls.editProperty}/${this.getClientName}`;
 
     return this._http.patch<Object>(_url, details, {
       headers: new HttpHeaders({
@@ -33,7 +45,7 @@ export class FormService {
   }
 
   public addFormProperty(details: any): Observable<Object> {
-    const _url: string = `${this._apiUrls.formUrls.addProperties}/${this.getClientName}`;
+    const _url: string = `${this._apiUrls.formUrls.addProperty}/${this.getClientName}`;
 
     return this._http.post<Object>(_url, details, {
       headers: new HttpHeaders({

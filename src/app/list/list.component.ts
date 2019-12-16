@@ -41,7 +41,28 @@ AfterContentInit, OnChanges {
 
   ngAfterContentInit() { }
 
-  public deleteProperty(): void { }
+  public deleteProperty(prop: FormRecords): void {
+    this._forms
+    .deleteFormProperty(prop.id)
+    .subscribe(
+      (data: HttpResponse) => {
+        console.log({data});
+        this._snackbar.showSnackBar(data.message, null,
+          {
+            duration: 20000,
+            verticalPosition: 'bottom',
+            horizontalPosition: 'right',
+            panelClass: '__mx-vw-33'
+          }
+        );
+        this.getList();
+      },
+      (error: HttpResponse) => {
+        console.log({error});
+        this._snackbar.showSnackBar(error.error.message);
+      }
+    )
+  }
 
   public editProperty(prop: FormRecords): void {
     const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog.openDialog(
