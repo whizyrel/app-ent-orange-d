@@ -13,7 +13,7 @@
           <span> {{ list.type }} </span>
         </div>
         <i class="fa fa-pen my-auto mr-2 ml-auto __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="edit" (click)="editProperty(list)"></i>
-        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="delete" (click)="deleteProperty(list)"></i>
+        <i class="far fa-trash-alt my-auto mr-3 __list-container-items-action-icons d-none" data-toggle="tooltip" data-placement="top" title="delete" (click)="showDeleteDialog(list)"></i>
       </div>
 
       <div *ngIf="lists.length === 0" class="d-flex py-3 w-100">

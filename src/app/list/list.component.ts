@@ -9,6 +9,7 @@ import { HttpResponse } from '../interfaces/http-response';
 import { FormDetails, FormRecords } from '../interfaces/form-details';
 
 import { AddFormPropsComponent } from '../add-form-props/add-form-props.component';
+import { DeleteFormPropDialogComponent } from '../delete-form-prop-dialog/delete-form-prop-dialog.component';
 
 @Component({
   selector: 'app-list',
@@ -41,27 +42,21 @@ AfterContentInit, OnChanges {
 
   ngAfterContentInit() { }
 
-  public deleteProperty(prop: FormRecords): void {
-    this._forms
-    .deleteFormProperty(prop.id)
-    .subscribe(
-      (data: HttpResponse) => {
-        console.log({data});
-        this._snackbar.showSnackBar(data.message, null,
-          {
-            duration: 20000,
-            verticalPosition: 'bottom',
-            horizontalPosition: 'right',
-            panelClass: '__mx-vw-33'
-          }
-        );
-        this.getList();
-      },
-      (error: HttpResponse) => {
-        console.log({error});
-        this._snackbar.showSnackBar(error.error.message);
+  public showDeleteDialog(prop: FormRecords): void {
+    // show dialog first
+    const dialogRef: MatDialogRef<DeleteFormPropDialogComponent, any> =
+    this._dialog.openDialog(
+      {id: prop.id, prop}, DeleteFormPropDialogComponent,
+      {
+        width: '450px', height: '240px',
+        minWidth: '450px',
+        hasBackdrop: true
       }
-    )
+    );
+
+    dialogRef.afterClosed().subscribe(
+      () => this.getList()
+    );
   }
 
   public editProperty(prop: FormRecords): void {
