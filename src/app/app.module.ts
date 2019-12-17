@@ -12,12 +12,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppDetailsService } from './services/app-details.service';
-import {ApiUrlsService} from './services/api-urls.service';
-import {LocalStorageService} from './services/local-storage.service';
-import {DecryptEncryptService} from './services/decrypt-encrypt.service';
+import { ApiUrlsService } from './services/api-urls.service';
+import { LocalStorageService } from './services/local-storage.service';
+import { DecryptEncryptService } from './services/decrypt-encrypt.service';
 import { FormService } from './services/form.service';
 import { DialogService } from './services/dialog.service';
 import { PermissionsService } from './services/permissions.service';
