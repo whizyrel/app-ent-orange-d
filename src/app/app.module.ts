@@ -22,6 +22,7 @@ import { FormService } from './services/form.service';
 import { DialogService } from './services/dialog.service';
 import { PermissionsService } from './services/permissions.service';
 import { SnackBarService } from './services/snack-bar.service';
+import { SigninService } from './services/signin.service';
 
 import {Links} from './common/links';
 
@@ -80,7 +81,7 @@ import { FormRecordsComponent } from './form-records/form-records.component';
     Links,
     FormService,
     DialogService, PermissionsService,
-    SnackBarService
+    SnackBarService, SigninService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
