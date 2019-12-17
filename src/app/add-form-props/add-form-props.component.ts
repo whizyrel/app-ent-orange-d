@@ -41,8 +41,8 @@ export class AddFormPropsComponent implements OnInit {
       )
       .subscribe(
         (data: HttpResponse) => {
-          console.log({data});
           this._snackbar.showSnackBar(data.message);
+          this.addFormProps.reset();
         },
         (error: HttpResponse) => {
           console.log({error});
