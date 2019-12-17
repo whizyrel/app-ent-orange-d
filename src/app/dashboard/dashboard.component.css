@@ -1,6 +1,6 @@
 .__navbar {
   position: absolute;
-  z-index: 5000;
+  z-index: 1000;
   background-color: var(--white);
   height: var(--top-navbar-height);
   border-bottom: .5px solid #343a402e;
@@ -58,7 +58,7 @@
   position: absolute;
   background-color: var(--white);
   width: var(--sidebar-width);
-  z-index: 1000;
+  z-index: 500;
   box-shadow: 0 0 3px 0px var(--white-shadow);
   flex-direction: column;
 }
@@ -73,7 +73,7 @@
   background-color: var(--link-white);
   border: 1px solid none;
   border-radius: var(--link-border-radius);
-  z-index: 1000;
+  z-index: 500;
   background-color: white;
   box-shadow: 0 0 5px .05px var(--active-link-shadow);
 }
@@ -95,7 +95,7 @@
 .__main-navigation-navbar {
   background-color: var(--white);
   height: var(--main-nav-height);
-  z-index: 1000;
+  z-index: 500;
   position: absolute;
   width: calc(100% - var(--sidebar-width));
   border-bottom: .5px solid #343a402e;
