@@ -37,7 +37,7 @@
               placeholder="Enter your password"
               formControlName="password"
               [type]="hide ? 'password' : 'text'"
-              [ngClass]="{ 'is-invalid': submitted && status.password.errors }"
+              [ngClass]="{ 'is-invalid': status.password.errors }"
               required
               autocomplete
             />
