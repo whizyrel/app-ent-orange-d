@@ -80,15 +80,8 @@
 }
 
 .__form-tabs {
-  font-size: 14px;
+  font-size: 17  px;
   height: 30px;
-}
-
-.__form-fields input {
-  border: none;
-  height: 50px;
-  background-color: #ffffff;
-  text-align: right;
 }
 
 .__form-fields input:focus {
