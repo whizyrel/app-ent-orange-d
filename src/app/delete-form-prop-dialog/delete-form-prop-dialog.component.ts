@@ -21,8 +21,6 @@ export class DeleteFormPropDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log({d: this.data});
-
     this.dialogRef.removePanelClass(['cdk-overlay-pane', 'mat-dialog-container']);
   }
 
@@ -35,7 +33,6 @@ export class DeleteFormPropDialogComponent implements OnInit {
     .deleteFormProperty(id)
     .subscribe(
       (data: HttpResponse) => {
-        console.log({data});
         this._snackbar.showSnackBar(
           data.message, null,
           {

@@ -100,7 +100,6 @@ AfterContentInit, OnChanges {
     .getFormDetails(this.props.id, this.props.title)
     .subscribe(
       (data: HttpResponse) => {
-        console.log({data});
         this.lists = data.rows;
       },
       (error: HttpResponse) => {
