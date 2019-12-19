@@ -1,7 +1,7 @@
 <div class="d-flex __dialog-container __br-brl __br-trl">
   <div class="d-flex w-100 __vector-background __br-trl"></div>
 
-  <span class="__bold-text mt-4 ml-5">{{ this.action }} Form</span>
+  <span class="__bold-text mt-4 ml-5">{{ this.action }} Form Title</span>
 
   <form [formGroup]="addForm" class="mt-4 mx-3">
     <mat-form-field class="w-100" appearance="outline">
@@ -12,22 +12,22 @@
       <mat-error *ngIf="status.title.invalid"> {{ getErrorMessage.titleError() }} </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="mt-3 w-100" appearance="outline">
+    <!-- <mat-form-field class="mt-3 w-100" appearance="outline">
       <mat-label>Select permission level</mat-label>
       <mat-select placeholder="Permission Level" required [formControl]="status.permissionLevel">
         <mat-option *ngFor="let permission of permissions" (click)="setPermissionId(permission.id)" [value]="permission.level">{{ permission.level }}</mat-option>
       </mat-select>
       <mat-error *ngIf="status.permissionLevel.invalid"> {{ getErrorMessage.permissionLevelError() }} </mat-error>
-    </mat-form-field>
+    </mat-form-field> -->
   </form>
 
   <div class="d-flex w-100 mt-auto __dialog-action-container __br-brl">
     <div class="d-flex w-50 __dialog-action-btn-left __br-bl" (click)="submit()">
-      <span class="m-auto __bold-text">Ok</span>
+      <span class="m-auto __bold-text"> Proceed </span>
     </div>
 
     <div class="d-flex w-50 __dialog-action-btn-right __br-br" (click)="closeDialog()">
-      <span class="m-auto __bold-text">Cancel</span>
+      <span class="m-auto __bold-text"> Cancel </span>
     </div>
   </div>
 </div>

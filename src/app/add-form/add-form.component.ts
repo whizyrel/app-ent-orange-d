@@ -37,7 +37,7 @@ export class AddFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getPermissionsList();
+    // this.getPermissionsList();
     this.action = this.capFirstLetter(this.value);
 
     this.initForm();
@@ -55,17 +55,15 @@ export class AddFormComponent implements OnInit {
           this._snackbar
           .showSnackBar(data.message);
 
-          if (this.data.action) {
-            this.data.action();
-          }
+          // add permissions, add form properties dialog
 
           this.closeDialog();
           // open add form-properties dialog
           this._dialog.openDialog(
             {data: null},
             AddFormPropsComponent
-            // {width: '', heminWidth: '', hasBackProps: true}
           );
+
           return;
         },
         (error: HttpResponse) => {
@@ -81,16 +79,12 @@ export class AddFormComponent implements OnInit {
     if (this.data.edit && this.status.title.touched) {
       this.changeFormTitle();
     }
-
-    // if (this.data.edit && this.status.permissionLevel.touched) {
-    //   this.changePermission();
-    // }
   }
 
   private changePermission (): void {
     this._forms
     .changeFormPermission({
-      permissionId: this.pid,
+      // permissionId: this.pid,
       title: this.addForm.getRawValue().title
     })
     .subscribe(
@@ -117,11 +111,6 @@ export class AddFormComponent implements OnInit {
         this.closeDialog();
         this._snackbar
         .showSnackBar(data.message);
-
-        // if permission level changed
-        if (this.status.permissionLevel.touched) {
-          this.changePermission();
-        }
       },
       (error: HttpResponse) => {
         console.log({error});
@@ -154,11 +143,12 @@ export class AddFormComponent implements OnInit {
       title: new FormControl(
         this.data.props ? this.data.props.title : '',
         Validators.required
-      ),
-      permissionLevel: new FormControl(
-        this.data.props ? this.data.props.pl : '',
-        Validators.required
       )
+      // ,
+      // permissionLevel: new FormControl(
+      //   this.data.props ? this.data.props.pl : '',
+      //   Validators.required
+      // )
     });
   }
 
