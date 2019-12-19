@@ -56,12 +56,20 @@ export class AddFormComponent implements OnInit {
           .showSnackBar(data.message);
 
           // add permissions, add form properties dialog
-
-          this.closeDialog();
           // open add form-properties dialog
-          this._dialog.openDialog(
-            {add: true, edit: false},
+          const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog
+          .openDialog(
+            {
+              add: true, edit: false,
+              props: {title: this.formDetails.title}
+            },
             AddFormPropsComponent
+          );
+
+          dialogRef
+          .afterClosed()
+          .subscribe(
+            () => this.closeDialog()
           );
 
           return;
