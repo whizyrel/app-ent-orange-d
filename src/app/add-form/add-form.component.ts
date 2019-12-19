@@ -60,7 +60,7 @@ export class AddFormComponent implements OnInit {
           this.closeDialog();
           // open add form-properties dialog
           this._dialog.openDialog(
-            {data: null},
+            {add: true, edit: false},
             AddFormPropsComponent
           );
 
