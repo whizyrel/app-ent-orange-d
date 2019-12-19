@@ -4,13 +4,13 @@ export interface FormDetails {
   clientid: string;
   id: string;
   key: Array<string>;
-  level:  string;
+  // level:  string;
 };
 
 export interface FormTitle {
   title?: string;
-  permissionLevel?: string;
-  permissionId?: string;
+  // permissionLevel?: string;
+  // permissionId?: string;
   id?: string;
 };
 
