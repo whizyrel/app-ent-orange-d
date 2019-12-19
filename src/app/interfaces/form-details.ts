@@ -1,6 +1,5 @@
 export interface FormDetails {
   title: string;
-  permissionid: string;
   clientid: string;
   id: string;
   key: Array<string>;
