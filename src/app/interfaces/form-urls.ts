@@ -3,10 +3,6 @@ export interface FormUrls {
   add: string;
   edit: string;
   delete: string;
-  changePermission: string;
-  addPermission: string;
-  deletePermission: string;
-  listPermissions: string;
   addProperty: string;
   editProperty: string;
   listProperties: string;
