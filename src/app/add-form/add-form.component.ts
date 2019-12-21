@@ -90,23 +90,23 @@ export class AddFormComponent implements OnInit {
   }
 
   private changePermission (): void {
-    this._forms
-    .changeFormPermission({
-      // permissionId: this.pid,
-      title: this.addForm.getRawValue().title
-    })
-    .subscribe(
-      (data: HttpResponse) => {
-        this.closeDialog();
-        this._snackbar
-        .showSnackBar(data.message);
-      },
-      (error: HttpResponse) => {
-        console.log({error});
-        this._snackbar
-        .showSnackBar(error.error.message);
-      }
-    );
+    // this._forms
+    // .changeFormPermission({
+    //   // permissionId: this.pid,
+    //   title: this.addForm.getRawValue().title
+    // })
+    // .subscribe(
+    //   (data: HttpResponse) => {
+    //     this.closeDialog();
+    //     this._snackbar
+    //     .showSnackBar(data.message);
+    //   },
+    //   (error: HttpResponse) => {
+    //     console.log({error});
+    //     this._snackbar
+    //     .showSnackBar(error.error.message);
+    //   }
+    // );
   }
 
   private changeFormTitle (): void {
