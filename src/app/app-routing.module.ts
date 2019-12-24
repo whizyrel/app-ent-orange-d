@@ -8,6 +8,7 @@ import { ListComponent } from './list/list.component';
 import { UserDetailsPaneComponent } from './user-details-pane/user-details-pane.component';
 import { NotificationPaneComponent } from './notification-pane/notification-pane.component';
 import { FormRecordsComponent } from './form-records/form-records.component';
+import { PermissionsComponent } from './permissions/permissions.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,12 @@ const routes: Routes = [
       {
         path: 'records',
         component: FormRecordsComponent,
+        pathMatch: 'full',
+        outlet: 'path',
+      },
+      {
+        path: 'permissions',
+        component: PermissionsComponent,
         pathMatch: 'full',
         outlet: 'path',
       },

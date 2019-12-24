@@ -39,6 +39,7 @@ import { AddFormPropsComponent } from './add-form-props/add-form-props.component
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { DeleteFormPropDialogComponent } from './delete-form-prop-dialog/delete-form-prop-dialog.component';
 import { FormRecordsComponent } from './form-records/form-records.component';
+import { PermissionsComponent } from './permissions/permissions.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { FormRecordsComponent } from './form-records/form-records.component';
     AddFormPropsComponent,
     DeleteDialogComponent,
     DeleteFormPropDialogComponent,
-    FormRecordsComponent
+    FormRecordsComponent,
+    PermissionsComponent
   ],
   imports: [
     BrowserModule,
