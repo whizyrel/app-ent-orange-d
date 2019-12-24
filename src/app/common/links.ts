@@ -36,8 +36,8 @@ const sidebar: Array<LinksProps> = [
 const topbar: TopbarProps = {
   forms: [
     {title: 'list', iconClasses: 'far fa-list-alt mr-2', href: 'list'},
+    {title: 'permissions', iconClasses: 'fa fa-clipboard-list mr-2', href: 'permissions'},
     {title: 'records', iconClasses: 'fa fa-clipboard-list mr-2', href: 'records'},
-    {title: 'permissions', iconClasses: 'fa fa-clipboard-list mr-2', href: 'permisssions'}
   ],
   users: []
 };
