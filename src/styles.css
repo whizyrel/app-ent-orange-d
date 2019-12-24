@@ -35,6 +35,7 @@
   --badge-min-width: 440px;
   --badge-width: 75%;
   --dialog-border-radius: 8px;
+  --pr-header: 70px;
 }
 
 * {

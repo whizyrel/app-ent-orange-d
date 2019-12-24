@@ -1,0 +1,66 @@
+.__list-container {
+  box-shadow: 0 0 3px 0px var(--white-shadow);
+  z-index: 1000;
+}
+
+.__list-container-toolbar {
+  background-color: var(--light);
+  cursor: pointer;
+}
+
+.__list-container-toolbar-text,
+.__list-container-toolbar-add-btn {
+  color: #000000;
+}
+
+.__permission-list-icon {
+  background-color: #b4b7b98f;
+  border-radius: 50%;
+  min-width: 2.3rem;
+  height: 2.3rem;
+}
+
+.__list-container-items span:first-of-type {
+  font-size: 11px;
+}
+
+.__list-container-items:hover {
+  background-color: #d4d1d185;
+  z-index: 10000;
+  box-shadow: none;
+}
+
+.__list-container-items-main-details :nth-child(2) {
+  font-size: 15px;
+}
+
+.__list-container-items-main-details span:first-of-type {
+  font-size: 10px;
+  color: var(--white-shadow);
+}
+
+.__prermission-records-container {
+  background-color: var(--white);
+  margin-left: var(--pane-width);
+  margin-top: var(--main-nav-height);
+  position: fixed;
+  width: calc(100% - var(--pane-width) - var(--sidebar-width));
+  height: calc(100% - var(--main-nav-height) - var(--top-navbar-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.__permission-record-header {
+  height: var(--pr-header);
+  color: var(--grey);
+  position: fixed;
+}
+
+.__permission-record-header :nth-child(3) {
+  font-size: 12px;
+  color: var(--white-shadow);
+}
+
+.__permission-record-body {
+  margin-top: var(--pr-header);
+}
