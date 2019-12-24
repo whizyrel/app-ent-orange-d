@@ -3,7 +3,6 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
-import { PermissionsService } from '../services/permissions.service';
 import { SnackBarService } from '../services/snack-bar.service';
 import { DialogService } from '../services/dialog.service';
 
@@ -22,22 +21,18 @@ export class AddFormComponent implements OnInit {
 
   public action: string = 'add';
   private value: string = this.data.add ? 'add' : 'edit';
-  public permissions: any = [];
   private formDetails: FormTitle;
-  private pid: string;
 
   constructor(
     public dialogRef: MatDialogRef<AddFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
     private formBuilder: FormBuilder,
     private _forms: FormService,
-    private _permissions: PermissionsService,
     private _snackbar: SnackBarService,
     private _dialog: DialogService
   ) { }
 
   ngOnInit() {
-    // this.getPermissionsList();
     this.action = this.capFirstLetter(this.value);
 
     this.initForm();
@@ -89,26 +84,6 @@ export class AddFormComponent implements OnInit {
     }
   }
 
-  private changePermission (): void {
-    // this._forms
-    // .changeFormPermission({
-    //   // permissionId: this.pid,
-    //   title: this.addForm.getRawValue().title
-    // })
-    // .subscribe(
-    //   (data: HttpResponse) => {
-    //     this.closeDialog();
-    //     this._snackbar
-    //     .showSnackBar(data.message);
-    //   },
-    //   (error: HttpResponse) => {
-    //     console.log({error});
-    //     this._snackbar
-    //     .showSnackBar(error.error.message);
-    //   }
-    // );
-  }
-
   private changeFormTitle (): void {
     this._forms
     .editFormTitle({
@@ -128,35 +103,12 @@ export class AddFormComponent implements OnInit {
     );
   }
 
-  private getPermissionsList(): void {
-    this._permissions
-    .listPermissions.subscribe(
-      (data: HttpResponse) => {
-        this.permissions = data.permissions;
-      },
-      (error: HttpResponse) => {
-        console.log({error});
-        this._snackbar
-        .showSnackBar(error.error.message);
-      }
-    );
-  }
-
-  public setPermissionId(id: string): void {
-    this.pid = id;
-  }
-
   private initForm(): void {
     this.addForm = this.formBuilder.group({
       title: new FormControl(
         this.data.props ? this.data.props.title : '',
         Validators.required
       )
-      // ,
-      // permissionLevel: new FormControl(
-      //   this.data.props ? this.data.props.pl : '',
-      //   Validators.required
-      // )
     });
   }
 
@@ -166,11 +118,6 @@ export class AddFormComponent implements OnInit {
         if (this.status.title.hasError('required')) {
           return 'Title field can not be empty!';
         };
-      },
-      permissionLevelError: () => {
-        if (this.status.permissionLevel.hasError('required')) {
-          return 'Select permission level';
-        }
       }
     }
   }
