@@ -18,7 +18,7 @@
   color: #000000;
 }
 
-.__list-container-items span:first-of-type {
+.__list-container-items > span:first-of-type {
   font-size: 11px;
 }
 
@@ -42,4 +42,8 @@
   border-radius: 50%;
   min-width: 2.3rem;
   height: 2.3rem;
+}
+
+.__permission-list-icon span {
+  font-size: 19px;
 }
