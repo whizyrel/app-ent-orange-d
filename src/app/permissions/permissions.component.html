@@ -1,47 +1,33 @@
-  <div class="d-flex __list-container">
-    <div class="d-flex __list-container-toolbar">
-      <i class="fas fa-plus fa-1x my-auto ml-auto mr-2 __list-container-toolbar-add-btn"></i>
-      <span class="my-auto __list-container-toolbar-text mr-4">Add a permission</span>
-    </div>
-
-    <div class="d-flex __list-container-items w-100">
-      <div class="d-flex ml-3 my-auto __permission-list-icon">
-        <span class="m-auto __bold-text">L</span>
-      </div>
-
-      <div class="ml-3 d-flex __list-container-items-main-details">
-        <span class="mb-2 mt-1 __bold-text">permission level</span>
-        <span class="mb-2 __list-container-items-main-details-title">Branch</span>
-      </div>
-
-      <span class="ml-auto my-auto mr-2 __bold-text">assign</span>
-
-      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
-    </div>
-
-    <div class="d-flex __list-container-items w-100">
-      <div class="d-flex my-auto ml-3 __icon"></div>
-      <div class="ml-3 d-flex __list-container-items-main-details">
-        <div class="mt-2 mr-2 __list-container-items-main-details-title-mock"></div>
-        <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
-      </div>
-      <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons-mock"></i>
-      <i class="fas fa-trash fa-1x mr-3 my-auto __list-container-items-action-icons-mock"></i>
-    </div>
+<div class="d-flex __list-container">
+  <div class="d-flex __list-container-toolbar">
+    <i class="fas fa-plus fa-1x my-auto ml-auto mr-2 __list-container-toolbar-add-btn"></i>
+    <span class="my-auto __list-container-toolbar-text mr-4">Add a permission</span>
   </div>
 
-  <div class="d-flex __prermission-records-container">
-    <div class="d-flex w-100 __permission-record-header">
-      <div class="d-flex ml-3 my-auto __permission-list-icon">
-        <span class="m-auto __bold-text">L</span>
-      </div>
-
-      <span class="d-flex ml-2 my-auto __bold-text">Level</span>
-      <span class="d-flex ml-2 my-auto __bold-text">assigned to ...</span>
+  <div class="d-flex __list-container-items w-100" (click)="setRid('idjsjkskkkf')">
+    <div class="d-flex ml-3 my-auto __permission-list-icon">
+      <span class="m-auto __bold-text">L</span>
     </div>
 
-    <div class="d-flex w-100 __permission-record-body">
-      <span>title from forms</span>
-      <span>level</span>
+    <div class="ml-3 d-flex __list-container-items-main-details">
+      <span class="mb-2 mt-1 __bold-text">permission level</span>
+      <span class="mb-2 __list-container-items-main-details-title">Branch</span>
     </div>
+
+    <span class="ml-auto my-auto mr-2 __bold-text">assign</span>
+
+    <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons"></i>
+  </div>
+
+  <div class="d-flex __list-container-items w-100">
+    <div class="d-flex my-auto ml-3 __icon"></div>
+    <div class="ml-3 d-flex __list-container-items-main-details">
+      <div class="mt-2 mr-2 __list-container-items-main-details-title-mock"></div>
+      <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
     </div>
+    <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons-mock"></i>
+    <i class="fas fa-trash fa-1x mr-3 my-auto __list-container-items-action-icons-mock"></i>
+  </div>
+</div>
+
+<app-permission-records [id]="rId"></app-permission-records>

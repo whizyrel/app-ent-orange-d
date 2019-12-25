@@ -1,0 +1,24 @@
+.__prermission-records-container {
+  background-color: var(--white);
+  margin-left: var(--pane-width);
+  position: fixed;
+  width: calc(100% - var(--pane-width) - var(--sidebar-width));
+  height: calc(100% - var(--main-nav-height) - var(--top-navbar-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.__permission-record-header {
+  height: var(--pr-header);
+  color: var(--grey);
+  position: fixed;
+}
+
+.__permission-record-header :nth-child(3) {
+  font-size: 12px;
+  color: var(--white-shadow);
+}
+
+.__permission-record-body {
+  margin-top: var(--pr-header);
+}
