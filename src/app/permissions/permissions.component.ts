@@ -23,6 +23,7 @@ export class PermissionsComponent implements OnInit,
 AfterContentInit {
   private rId: string;
   public permissions: Permissions[];
+  public mocks: Number[] = [1,2,3,4,5,6];
 
   constructor(
     private _permissions: PermissionsService,
@@ -35,10 +36,15 @@ AfterContentInit {
     this.getPermissionsList();
   }
 
+
+  public openAssignDialog(): void {
+    
+  }
+
   public openPermissionLevelDialog(): void {
     const dg: MatDialogRef<AddPermissionsLevelComponent> =
     this._dialog.openDialog(
-      {add: true, edit: false},
+      { },
       AddPermissionsLevelComponent
     );
 
@@ -59,7 +65,7 @@ AfterContentInit {
     );
 
     dialogRef.afterClosed().subscribe(
-      () => {}
+      () => this.getPermissionsList()
     )
   }
 
@@ -68,12 +74,12 @@ AfterContentInit {
     .listPermissionLevels
     .subscribe(
       (data: HttpResponse) => {
-        console.log({data});
         this.permissions = data.permissions;
         this.rId = this.permissions[0].id;
       },
       (error: HttpResponse) => {
         console.log({error});
+        this.permissions = [];
       }
     );
   }

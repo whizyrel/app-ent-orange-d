@@ -41,6 +41,8 @@ import { DeleteFormPropDialogComponent } from './delete-form-prop-dialog/delete-
 import { FormRecordsComponent } from './form-records/form-records.component';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { PermissionRecordsComponent } from './permission-records/permission-records.component';
+import { PermissionsDeleteDialogComponent } from './permissions-delete-dialog/permissions-delete-dialog.component';
+import { AddPermissionsLevelComponent } from './add-permissions-level/add-permissions-level.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { PermissionRecordsComponent } from './permission-records/permission-reco
     DeleteFormPropDialogComponent,
     FormRecordsComponent,
     PermissionsComponent,
-    PermissionRecordsComponent
+    PermissionRecordsComponent,
+    PermissionsDeleteDialogComponent,
+    AddPermissionsLevelComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +94,8 @@ import { PermissionRecordsComponent } from './permission-records/permission-reco
   bootstrap: [AppComponent],
   entryComponents: [
     AddFormComponent, DeleteDialogComponent,
-    AddFormPropsComponent, DeleteFormPropDialogComponent
+    AddFormPropsComponent, DeleteFormPropDialogComponent,
+    AddPermissionsLevelComponent, PermissionsDeleteDialogComponent
   ]
 })
 export class AppModule {}
