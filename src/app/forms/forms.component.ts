@@ -5,7 +5,6 @@ import { MatDialogRef } from '@angular/material/material';
 
 import { FormService } from '../services/form.service';
 import { DialogService } from '../services/dialog.service';
-import {SnackBarService} from '../services/snack-bar.service';
 
 import { HttpResponse } from '../interfaces/http-response';
 import { FormDetails } from '../interfaces/form-details';
@@ -27,8 +26,7 @@ AfterViewInit, AfterContentInit {
 
   constructor(
     private _forms: FormService,
-    private _dialog: DialogService,
-    private _snackbar: SnackBarService
+    private _dialog: DialogService
   ) { }
 
   ngOnInit() { }
