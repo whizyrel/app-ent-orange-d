@@ -1,5 +1,5 @@
 .__list-container {
-  box-shadow: 1px 0 1.5px 0 var(--white-shadow);
+  box-shadow: 0 0 1.5px 0 var(--white-shadow);
   z-index: 1000;
 }
 
