@@ -30,10 +30,10 @@ export class PermissionsService {
     });
   }
 
-  public addPermissionLevel(): Observable<object> {
+  public addPermissionLevel(level: string): Observable<object> {
     const _url: string = `${this._apiUrls.permissionUrls.addPermissionLevel}/${this.getClientName}`;
 
-    return this._http.post<Object>(_url, {
+    return this._http.post<Object>(_url, {level}, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
