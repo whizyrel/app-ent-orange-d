@@ -18,10 +18,10 @@ export class PermissionsService {
     private _appDetails: AppDetailsService
   ) { }
 
-  public deletePermissionLevel(): Observable<object> {
-    const _url: string = `${this._apiUrls.permissionUrls.deletePermissionLevel}/${this.getClientName}`;
+  public deletePermissionLevel(id: string): Observable<object> {
+    const _url: string = `${this._apiUrls.permissionUrls.deletePermissionLevel}/${this.getClientName}/${id}`;
 
-    return this._http.get<Object>(_url, {
+    return this._http.delete<Object>(_url, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
@@ -33,7 +33,7 @@ export class PermissionsService {
   public addPermissionLevel(): Observable<object> {
     const _url: string = `${this._apiUrls.permissionUrls.addPermissionLevel}/${this.getClientName}`;
 
-    return this._http.get<Object>(_url, {
+    return this._http.post<Object>(_url, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
