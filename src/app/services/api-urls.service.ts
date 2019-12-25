@@ -37,7 +37,7 @@ const formUrls: FormUrls = {
 const permissionsUrls: PermissionsUrls = {
   changePermissionLevel: `${_url}/p/lv/c`,
   listPermissionLevels: `${_url}/p/lv/l`,
-  addPermissionLevel: `${_url}/p//lv/a`,
+  addPermissionLevel: `${_url}/p/lv/a`,
   deletePermissionLevel: `${_url}/p/lv/d`,
   addPermissionRecord: `${_url}/p/pr/a`,
   listPermissionRecords: `${_url}/p/pr/l`,
