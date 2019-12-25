@@ -137,6 +137,7 @@
   height: fit-content;
   box-shadow: 0 0 2px 0px var(--white-shadow);
   border-radius: 15px;
+  z-index: 15000;
 }
 
 .__quick-action-icon-container {
