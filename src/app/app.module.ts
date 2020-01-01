@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 
+import { SharedModule } from './shared/shared.module';
+
 import { AppDetailsService } from './services/app-details.service';
 import { ApiUrlsService } from './services/api-urls.service';
 import { LocalStorageService } from './services/local-storage.service';
@@ -24,7 +26,7 @@ import { PermissionsService } from './services/permissions.service';
 import { SnackBarService } from './services/snack-bar.service';
 import { SigninService } from './services/signin.service';
 
-import {Links} from './common/links';
+import { Links } from './common/links';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -34,35 +36,23 @@ import { ListComponent } from './list/list.component';
 import { NotificationPaneComponent } from './notification-pane/notification-pane.component';
 import { UserDetailsPaneComponent } from './user-details-pane/user-details-pane.component';
 import { HomeComponent } from './home/home.component';
-import { AddFormComponent } from './add-form/add-form.component';
-import { AddFormPropsComponent } from './add-form-props/add-form-props.component';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
-import { DeleteFormPropDialogComponent } from './delete-form-prop-dialog/delete-form-prop-dialog.component';
 import { FormRecordsComponent } from './form-records/form-records.component';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { PermissionRecordsComponent } from './permission-records/permission-records.component';
-import { PermissionsDeleteDialogComponent } from './permissions-delete-dialog/permissions-delete-dialog.component';
-import { AddPermissionsLevelComponent } from './add-permissions-level/add-permissions-level.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     DashboardComponent,
     FormsComponent,
     MockPreloaderComponent,
     ListComponent,
     NotificationPaneComponent,
     UserDetailsPaneComponent,
-    HomeComponent,
-    AddFormComponent,
-    AddFormPropsComponent,
-    DeleteDialogComponent,
-    DeleteFormPropDialogComponent,
     FormRecordsComponent,
     PermissionsComponent,
     PermissionRecordsComponent,
-    PermissionsDeleteDialogComponent,
-    AddPermissionsLevelComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +69,8 @@ import { AddPermissionsLevelComponent } from './add-permissions-level/add-permis
     MatTabsModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    SharedModule
   ],
   providers: [
     AppDetailsService,
@@ -91,11 +82,6 @@ import { AddPermissionsLevelComponent } from './add-permissions-level/add-permis
     DialogService, PermissionsService,
     SnackBarService, SigninService
   ],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    AddFormComponent, DeleteDialogComponent,
-    AddFormPropsComponent, DeleteFormPropDialogComponent,
-    AddPermissionsLevelComponent, PermissionsDeleteDialogComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
