@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 
 import { SharedModule } from './shared/shared.module';
+import { FormModule } from './forms/form.module';
 
 import { AppDetailsService } from './services/app-details.service';
 import { ApiUrlsService } from './services/api-urls.service';
@@ -30,32 +31,22 @@ import { Links } from './common/links';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormsComponent } from './forms/forms.component';
 import { MockPreloaderComponent } from './mock-preloader/mock-preloader.component';
-import { ListComponent } from './list/list.component';
 import { NotificationPaneComponent } from './notification-pane/notification-pane.component';
-import { UserDetailsPaneComponent } from './user-details-pane/user-details-pane.component';
 import { HomeComponent } from './home/home.component';
-import { FormRecordsComponent } from './form-records/form-records.component';
-import { PermissionsComponent } from './permissions/permissions.component';
-import { PermissionRecordsComponent } from './permission-records/permission-records.component';
-
+import { UserDetailsPaneComponent } from './user-details-pane/user-details-pane.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    FormsComponent,
     MockPreloaderComponent,
-    ListComponent,
     NotificationPaneComponent,
-    UserDetailsPaneComponent,
-    FormRecordsComponent,
-    PermissionsComponent,
-    PermissionRecordsComponent,
+    UserDetailsPaneComponent
   ],
   imports: [
     BrowserModule,
+    FormModule,
     AppRoutingModule,
     NgxElectronModule,
     BrowserAnimationsModule,
@@ -79,8 +70,10 @@ import { PermissionRecordsComponent } from './permission-records/permission-reco
     DecryptEncryptService,
     Links,
     FormService,
-    DialogService, PermissionsService,
-    SnackBarService, SigninService
+    DialogService,
+    PermissionsService,
+    SnackBarService,
+    SigninService
   ],
   bootstrap: [AppComponent]
 })
