@@ -22,9 +22,7 @@ OnChanges {
     private _permissions: PermissionsService
   ) { }
 
-  ngOnInit() {
-    console.log({id: this.id});
-  }
+  ngOnInit() { }
 
   ngOnChanges() {
     if (
@@ -32,6 +30,7 @@ OnChanges {
       ) {
       // get list
       this.getPermissionRecords();
+      console.log({id: this.id});
     }
   }
 

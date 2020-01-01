@@ -21,7 +21,7 @@ import { AddPermissionsLevelComponent } from '../add-permissions-level/add-permi
 })
 export class PermissionsComponent implements OnInit,
 AfterContentInit {
-  private rId: string;
+  public rId: string;
   public permissions: Permissions[];
   public mocks: Number[] = [1,2,3,4,5,6];
 
@@ -36,9 +36,8 @@ AfterContentInit {
     this.getPermissionsList();
   }
 
-
   public openAssignDialog(): void {
-    
+
   }
 
   public openPermissionLevelDialog(): void {
