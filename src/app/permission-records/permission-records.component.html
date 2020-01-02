@@ -5,11 +5,34 @@
     </div>
 
     <span class="d-flex ml-2 my-auto __bold-text">Level</span>
-    <span class="d-flex ml-2 my-auto __bold-text">assigned to ...</span>
+    <span class="d-flex ml-2 my-auto __bold-text text-truncate">assigned to {{ assignees !== '' ? assignees : 'none'}}</span>
   </div>
 
   <div class="d-flex w-100 __permission-record-body">
-    <span>title from forms</span>
-    <span>level</span>
+    <div *ngIf="records; else recordsElseBlock" class="w-100 d-flex">
+      <div *ngFor="let record of records" class="row mx-0 mt-1">
+        <div *ngFor="let form of record?.forms | async" class="col-md-4 col-lg-3 my-2 px-2" style="max-height: fit-content;">
+          <div class="d-flex w-100 __permission-record-items-card">
+            <span class="my-auto ml-3 __bold-text">{{ form }}</span>
+            <i class="far fa-trash-alt ml-auto my-auto mr-3"></i>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="records.length === 0" class="d-flex w-100 mt-1">
+        <span class="my-auto mx-auto __bold-text">List is empty</span>
+      </div>
+    </div>
+
+    <ng-template #recordsElseBlock>
+      <div class="d-flex row w-100 mx-0">
+        <div *ngFor="let mock of mocks" class="col-md-4 col-lg-3 my-2 px-2">
+          <div class="d-flex w-100 __permission-record-items-card __permission-record-items-card-mock">
+            <span class="my-auto ml-3 __bold-text __list-container-items-main-details-list-mock w-100 mr-2"></span>
+            <i class="fas fa-trash my-auto mr-3 __list-container-items-action-icons-mock"></i>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>
