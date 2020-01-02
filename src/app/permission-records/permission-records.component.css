@@ -12,6 +12,8 @@
   height: var(--pr-header);
   color: var(--grey);
   position: fixed;
+  background-color: #ffffff;
+  z-index: 1000;
 }
 
 .__permission-record-header :nth-child(3) {
@@ -36,4 +38,3 @@
 .__permission-record-items-card-mock {
   background-color: #ffffff /* var(--mock-color) */;
 }
-
