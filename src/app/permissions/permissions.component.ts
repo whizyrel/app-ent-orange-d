@@ -9,6 +9,7 @@ import { HttpResponse } from '../interfaces/http-response';
 
 import { PermissionsDeleteDialogComponent } from '../permissions-delete-dialog/permissions-delete-dialog.component';
 import { AddPermissionsLevelComponent } from '../add-permissions-level/add-permissions-level.component';
+import { AssignPermissionComponent } from '../assign-permission/assign-permission.component';
 
 @Component({
   selector: 'app-permissions',
@@ -23,7 +24,7 @@ export class PermissionsComponent implements OnInit,
 AfterContentInit {
   public rId: string;
   public permissions: Permissions[];
-  public mocks: Number[] = [1,2,3,4,5,6];
+  public mocks: Number[] = [1, 2, 3, 4, 5, 6];
 
   constructor(
     private _permissions: PermissionsService,
@@ -37,7 +38,15 @@ AfterContentInit {
   }
 
   public openAssignDialog(): void {
+    const dg: MatDialogRef<AssignPermissionComponent> =
+    this._dialog.openDialog(
+      { },
+      AssignPermissionComponent
+    );
 
+    dg.afterClosed().subscribe(
+      () => this.getPermissionsList()
+    );
   }
 
   public openPermissionLevelDialog(): void {
@@ -57,15 +66,15 @@ AfterContentInit {
     this._dialog.openDialog(
       {id}, PermissionsDeleteDialogComponent,
       {
-        width: '450px', height: '240px',
-        minWidth: '450px',
-        hasBackdrop: true
-      }
-    );
+      width: '450px',
+      height: '240px',
+      minWidth: '450px',
+      hasBackdrop: true
+    });
 
     dialogRef.afterClosed().subscribe(
       () => this.getPermissionsList()
-    )
+    );
   }
 
   private getPermissionsList(): void {
