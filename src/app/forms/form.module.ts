@@ -7,6 +7,7 @@ import { ListComponent } from '../list/list.component';
 import { FormRecordsComponent } from '../form-records/form-records.component';
 import { PermissionsComponent } from '../permissions/permissions.component';
 import { PermissionRecordsComponent } from '../permission-records/permission-records.component';
+import { AssignPermissionComponent } from '../assign-permission/assign-permission.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PermissionRecordsComponent } from '../permission-records/permission-rec
     ListComponent,
     FormRecordsComponent,
     PermissionsComponent,
-    PermissionRecordsComponent
+    PermissionRecordsComponent,
+    AssignPermissionComponent
   ],
   imports: [CommonModule, FormRoutingModule]
 })
