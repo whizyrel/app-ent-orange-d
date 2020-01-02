@@ -17,9 +17,23 @@ export class PermissionsService {
     private _apiUrls: ApiUrlsService,
     private _appDetails: AppDetailsService
   ) { }
+  public listPermissionRecords(id: string): Observable<object> {
+    const _url = <string>`${this._apiUrls.permissionUrls.listPermissionRecords}/${this.getClientName}/${id}`;
+
+    return this._http.get<Object>(_url, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      observe: 'body',
+      responseType: 'json',
+    });
+  }
 
   public deletePermissionLevel(id: string): Observable<object> {
-    const _url: string = `${this._apiUrls.permissionUrls.deletePermissionLevel}/${this.getClientName}/${id}`;
+    const _url =
+      <string>`${
+      this._apiUrls.permissionUrls.deletePermissionLevel
+      }/${ this.getClientName }/${ id }`;
 
     return this._http.delete<Object>(_url, {
       headers: new HttpHeaders({
@@ -31,7 +45,9 @@ export class PermissionsService {
   }
 
   public addPermissionLevel(level: string): Observable<object> {
-    const _url: string = `${this._apiUrls.permissionUrls.addPermissionLevel}/${this.getClientName}`;
+    const _url = <string>(
+      `${this._apiUrls.permissionUrls.addPermissionLevel}/${this.getClientName}`
+    );
 
     return this._http.post<Object>(_url, {level}, {
       headers: new HttpHeaders({
@@ -43,7 +59,9 @@ export class PermissionsService {
   }
 
   public get listPermissionLevels(): Observable<object> {
-    const _url: string = `${this._apiUrls.permissionUrls.listPermissionLevels}/${this.getClientName}`;
+    const _url = <string>(
+      `${this._apiUrls.permissionUrls.listPermissionLevels}/${this.getClientName}`
+    );
 
     return this._http.get<Object>(_url, {
       headers: new HttpHeaders({
@@ -55,6 +73,6 @@ export class PermissionsService {
   }
 
   private get getClientName(): string {
-    return this._appDetails.getName;
+    return <string>this._appDetails.getName;
   }
 }
