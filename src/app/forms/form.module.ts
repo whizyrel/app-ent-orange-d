@@ -18,6 +18,7 @@ import { AssignPermissionComponent } from '../assign-permission/assign-permissio
     PermissionRecordsComponent,
     AssignPermissionComponent
   ],
-  imports: [CommonModule, FormRoutingModule]
+  imports: [CommonModule, FormRoutingModule],
+  entryComponents: [AssignPermissionComponent]
 })
 export class FormModule {}
