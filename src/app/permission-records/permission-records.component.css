@@ -21,4 +21,19 @@
 
 .__permission-record-body {
   margin-top: var(--pr-header);
+  flex-direction: column;
 }
+
+.__permission-record-items-card {
+  height: 50px;
+  box-shadow: 0 0 3px 0px var(--white-shadow);
+}
+
+.__permission-record-items-card span {
+  font-size: 12px;
+}
+
+.__permission-record-items-card-mock {
+  background-color: #ffffff /* var(--mock-color) */;
+}
+
