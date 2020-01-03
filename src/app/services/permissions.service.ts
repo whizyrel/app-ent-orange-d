@@ -16,31 +16,47 @@ export class PermissionsService {
     private _http: HttpClient,
     private _apiUrls: ApiUrlsService,
     private _appDetails: AppDetailsService
-  ) { }
+  ) {}
+
+  public addPermissionRecords(id: string): Observable<object> {
+    const _url = <string>(
+      `${this._apiUrls.permissionUrls.addPermissionRecord}/${this.getClientName}/${id}`
+    );
+
+    return this._http.post<Object>(_url, null, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      observe: 'body',
+      responseType: 'json'
+    });
+  }
+
   public listPermissionRecords(id: string): Observable<object> {
-    const _url = <string>`${this._apiUrls.permissionUrls.listPermissionRecords}/${this.getClientName}/${id}`;
+    const _url = <string>(
+      `${this._apiUrls.permissionUrls.listPermissionRecords}/${this.getClientName}/${id}`
+    );
 
     return this._http.get<Object>(_url, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }),
       observe: 'body',
-      responseType: 'json',
+      responseType: 'json'
     });
   }
 
   public deletePermissionLevel(id: string): Observable<object> {
-    const _url =
-      <string>`${
-      this._apiUrls.permissionUrls.deletePermissionLevel
-      }/${ this.getClientName }/${ id }`;
+    const _url = <string>(
+      `${this._apiUrls.permissionUrls.deletePermissionLevel}/${this.getClientName}/${id}`
+    );
 
     return this._http.delete<Object>(_url, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }),
       observe: 'body',
-      responseType: 'json',
+      responseType: 'json'
     });
   }
 
@@ -49,13 +65,17 @@ export class PermissionsService {
       `${this._apiUrls.permissionUrls.addPermissionLevel}/${this.getClientName}`
     );
 
-    return this._http.post<Object>(_url, {level}, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-      observe: 'body',
-      responseType: 'json',
-    });
+    return this._http.post<Object>(
+      _url,
+      { level },
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        }),
+        observe: 'body',
+        responseType: 'json'
+      }
+    );
   }
 
   public get listPermissionLevels(): Observable<object> {
@@ -65,10 +85,10 @@ export class PermissionsService {
 
     return this._http.get<Object>(_url, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }),
       observe: 'body',
-      responseType: 'json',
+      responseType: 'json'
     });
   }
 
