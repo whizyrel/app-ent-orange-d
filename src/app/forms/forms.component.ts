@@ -11,6 +11,7 @@ import { FormDetails } from '../interfaces/form-details';
 
 import { AddFormComponent } from '../add-form/add-form.component';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { DialogConfig } from '../interfaces/dialog-config';
 
 @Component({
   selector: 'app-forms',
@@ -20,7 +21,7 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 export class FormsComponent implements OnInit,
 AfterViewInit, AfterContentInit {
   public forms: FormDetails[];
-  public mocks: number[] = [1,2,3,4,5,6,7];
+  public mocks: number[] = [1, 2, 3 , 4 , 5, 6, 7];
 
   public props: FormDetails;
 
@@ -44,7 +45,10 @@ AfterViewInit, AfterContentInit {
     this._dialog.openDialog({
       add: false, edit: true,
       props: {title, id}
-    }, AddFormComponent);
+    },
+      AddFormComponent,
+      <DialogConfig>{}
+    );
 
     dg.afterClosed().subscribe(
       () => this.updateFormsList()
@@ -59,7 +63,8 @@ AfterViewInit, AfterContentInit {
     const dg: MatDialogRef<AddFormComponent> =
     this._dialog.openDialog(
       {add: true, edit: false},
-      AddFormComponent
+      AddFormComponent,
+      <DialogConfig>{}
     );
 
     dg.afterClosed().subscribe(

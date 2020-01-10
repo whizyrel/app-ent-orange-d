@@ -10,6 +10,7 @@ import { FormTitle } from '../interfaces/form-details';
 import { HttpResponse } from '../interfaces/http-response';
 
 import { AddFormPropsComponent } from '../add-form-props/add-form-props.component';
+import { DialogConfig } from '../interfaces/dialog-config';
 
 @Component({
   selector: 'app-add-form',
@@ -19,7 +20,7 @@ import { AddFormPropsComponent } from '../add-form-props/add-form-props.componen
 export class AddFormComponent implements OnInit {
   public addForm: FormGroup;
 
-  public action: string = 'add';
+  public action = <string>'add';
   private value: string = this.data.add ? 'add' : 'edit';
   private formDetails: FormTitle;
 
@@ -52,13 +53,14 @@ export class AddFormComponent implements OnInit {
 
           // add permissions, add form properties dialog
           // open add form-properties dialog
-          const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog
-          .openDialog(
+          const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog.openDialog(
             {
-              add: true, edit: false,
-              props: {title: this.formDetails.title}
+              add: true,
+              edit: false,
+              props: { title: this.formDetails.title }
             },
-            AddFormPropsComponent
+            AddFormPropsComponent,
+            <DialogConfig>{}
           );
 
           dialogRef
@@ -117,9 +119,9 @@ export class AddFormComponent implements OnInit {
       titleError: () => {
         if (this.status.title.hasError('required')) {
           return 'Title field can not be empty!';
-        };
+        }
       }
-    }
+    };
   }
 
   public get status(): any {
