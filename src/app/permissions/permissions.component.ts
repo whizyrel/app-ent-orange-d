@@ -36,9 +36,9 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
     this.getPermissionsList();
   }
 
-  public openAssignDialog(): void {
+  public openAssignDialog(id: string): void {
     const dg: MatDialogRef<AssignPermissionComponent, any> = this._dialog.openDialog(
-      {},
+      {id},
       AssignPermissionComponent,
       {
         width: 'fit-content',

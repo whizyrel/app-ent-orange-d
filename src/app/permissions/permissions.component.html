@@ -15,7 +15,7 @@
         <span class="mb-2 __list-container-items-main-details-title">{{ permission.level }}</span>
       </div>
 
-      <span class="ml-auto my-auto mr-2 __bold-text" (click)="openAssignDialog()">assign</span>
+      <span class="ml-auto my-auto mr-2 __bold-text" (click)="openAssignDialog(permission.id)">assign</span>
 
       <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons" (click)="openDeleteDialog(permission.id)"></i>
     </div>
