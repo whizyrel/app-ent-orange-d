@@ -38,10 +38,15 @@ export class PermissionRecordsComponent
   private getPermissionRecords(id: string): void {
     this._permissions.listPermissionRecords(id).subscribe(
       (data: HttpResponse) => {
-        this.records = data.rows;
-        this.assignees = this.records
-          .map(cur => cur.forms.join(', '))
-          .join(', ');
+        data.hasOwnProperty('records') ?
+          this.records = [] :
+          this.records = data.rows;
+
+        this.assignees = this.records.length !== 0 ?
+          this.records
+            .map(cur => cur.forms.join(', '))
+            .join(', ') :
+          '';
       },
       (error: HttpResponse) => {
         console.log({ error });
