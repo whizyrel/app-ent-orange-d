@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { DialogConfig } from '../interfaces/dialog-config';
+import { ComponentType } from '@angular/core/src/render3';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class DialogService {
       minWidth= '320px',
       minHeight= 'fit-content',
     }: DialogConfig
-  ): MatDialogRef<any, any> {
+  ): MatDialogRef < any, any > {
     const dialogRef: MatDialogRef<any, any> = this.dialog.open(comp, {
           height, width, minWidth, minHeight,
           hasBackdrop,
