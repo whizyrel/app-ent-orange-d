@@ -54,22 +54,6 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
     dg.afterClosed().subscribe(() => this.getPermissionsList());
   }
 
-  public openPermissionLevelDialog(): void {
-    const dg: MatDialogRef<AddPermissionsLevelComponent> = this._dialog.openDialog(
-      {},
-      AddPermissionsLevelComponent,
-      {
-        width: 'fit-content',
-        minWidth: undefined,
-        minHeight: undefined,
-        hasBackdrop: true,
-        height: undefined
-      }
-    );
-
-    dg.afterClosed().subscribe(() => this.getPermissionsList());
-  }
-
   public openDeleteDialog(id: string): void {
     const dialogRef: MatDialogRef<
       PermissionsDeleteDialogComponent,
