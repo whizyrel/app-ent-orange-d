@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { FormRoutingModule } from './form-routing.module';
 import { FormsComponent } from './forms.component';
@@ -18,7 +19,7 @@ import { AssignPermissionComponent } from '../assign-permission/assign-permissio
     PermissionRecordsComponent,
     AssignPermissionComponent
   ],
-  imports: [CommonModule, FormRoutingModule],
+  imports: [CommonModule, FormRoutingModule, MatDialogModule],
   entryComponents: [AssignPermissionComponent]
 })
 export class FormModule {}
