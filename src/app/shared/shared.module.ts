@@ -9,7 +9,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 
-
 import { AddFormComponent } from '../add-form/add-form.component';
 import { AddFormPropsComponent } from '../add-form-props/add-form-props.component';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
