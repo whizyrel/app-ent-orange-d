@@ -18,12 +18,12 @@ export class PermissionsService {
     private _appDetails: AppDetailsService
   ) {}
 
-  public addPermissionRecords(id: string): Observable<object> {
+  public addPermissionRecords(body: {fid: string, id: string}): Observable<object> {
     const _url = <string>(
-      `${this._apiUrls.permissionUrls.addPermissionRecord}/${this.getClientName}/${id}`
+      `${this._apiUrls.permissionUrls.addPermissionRecord}/${this.getClientName}`
     );
 
-    return this._http.post<Object>(_url, null, {
+    return this._http.post<Object>(_url, body, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }),
