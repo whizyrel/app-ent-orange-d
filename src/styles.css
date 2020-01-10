@@ -104,6 +104,7 @@ mat-dialog-container {
   outline: 0;
   width: auto!important;
   height: auto!important;
+  max-height: fit-content!important;
 }
 
 .__dialog-container {
@@ -162,6 +163,7 @@ mat-dialog-container {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 20px;
 }
 
 /* Track */
