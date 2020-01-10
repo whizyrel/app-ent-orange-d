@@ -38,11 +38,10 @@ export class PermissionRecordsComponent
   private getPermissionRecords(id: string): void {
     this._permissions.listPermissionRecords(id).subscribe(
       (data: HttpResponse) => {
-        this.records = data.records;
-        this.assignees = data.records
+        this.records = data.rows;
+        this.assignees = this.records
           .map(cur => cur.forms.join(', '))
           .join(', ');
-        console.log({ data, a: this.assignees });
       },
       (error: HttpResponse) => {
         console.log({ error });
