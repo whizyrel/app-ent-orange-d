@@ -1,5 +1,4 @@
 .__dialog--container {
-  width: 80%/* 700px */;
   min-width: 600px;
   max-width: 900px;
   min-height: 400px;
@@ -15,7 +14,7 @@
   background-size: cover;
   background-position: center center;
   max-width: 250px;
-  border-radius: 25px 0 0 25px;
+  border-radius: 8px 0 0 8px;
 }
 
 .__dialog--main__container,

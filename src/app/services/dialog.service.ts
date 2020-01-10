@@ -14,18 +14,25 @@ export class DialogService {
     data: any,
     comp,
     {
-      height= '80%',
       hasBackdrop= true,
-      width= '350px',
-      minWidth= '320px',
-      minHeight= 'fit-content',
+      height = '80%',
+      minHeight = 'fit-content',
+      maxHeight = '80%',
+      width = '350px',
+      minWidth = '320px',
+      maxWidth = 'fit-content'
     }: DialogConfig
   ): MatDialogRef < any, any > {
     const dialogRef: MatDialogRef<any, any> = this.dialog.open(comp, {
-          height, width, minWidth, minHeight,
-          hasBackdrop,
-          data
-        });
+      height,
+      minHeight,
+      maxHeight,
+      width,
+      minWidth,
+      maxWidth,
+      hasBackdrop,
+      data
+    });
 
     return dialogRef;
   }

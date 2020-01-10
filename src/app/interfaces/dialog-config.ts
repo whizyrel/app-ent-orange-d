@@ -1,8 +1,9 @@
 export interface DialogConfig {
   hasBackdrop: boolean;
-  height: string;
   width: string;
-  minWidth?: string;
-  minHeight?: string;
   maxWidth?: string;
+  minWidth?: string;
+  height: string;
+  minHeight?: string;
+  maxHeight?: string;
 }
