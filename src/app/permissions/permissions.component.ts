@@ -42,11 +42,11 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
       AssignPermissionComponent,
       {
         width: 'fit-content',
-        minWidth: '600px',
+        minWidth: '320px',
         maxWidth: '900px',
         minHeight: '400px',
         height: 'auto',
-        maxHeight: '80%',
+        maxHeight: '500px',
         hasBackdrop: true,
       }
     );
