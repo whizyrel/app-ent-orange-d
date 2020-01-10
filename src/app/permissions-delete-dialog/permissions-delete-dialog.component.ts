@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 import { SnackBarService } from '../services/snack-bar.service';
 import { PermissionsService } from '../services/permissions.service';
@@ -15,13 +15,16 @@ export class PermissionsDeleteDialogComponent implements OnInit {
 
   constructor(
     private _permissions: PermissionsService,
-    public dialogRef: MatDialogRef<PermissionsDeleteDialogComponent>,
+    private dialogRef: MatDialogRef<PermissionsDeleteDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _snackbar: SnackBarService
   ) { }
 
   ngOnInit() {
-    console.log({id: this.data});
+    this.dialogRef.removePanelClass([
+      'mat-dialog-container',
+      'cdk-overlay-pane'
+    ]);
   }
 
   public close(): void {
