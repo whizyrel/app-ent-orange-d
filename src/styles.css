@@ -120,6 +120,12 @@ mat-dialog-container {
   max-width: 33vw!important;
 }
 
+.__mx-vw-40 {
+  max-width: 40vw!important;
+  display: flex!important;
+  flex-wrap: wrap;
+}
+
 /* library */
 .__bold-text {
   font-weight: 600;
