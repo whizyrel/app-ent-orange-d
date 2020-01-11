@@ -9,6 +9,7 @@ import { FormRecordsComponent } from '../form-records/form-records.component';
 import { PermissionsComponent } from '../permissions/permissions.component';
 import { PermissionRecordsComponent } from '../permission-records/permission-records.component';
 import { AssignPermissionComponent } from '../assign-permission/assign-permission.component';
+import { RecordDeleteDialogComponent } from '../record-delete-dialog/record-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { AssignPermissionComponent } from '../assign-permission/assign-permissio
     FormRecordsComponent,
     PermissionsComponent,
     PermissionRecordsComponent,
-    AssignPermissionComponent
+    AssignPermissionComponent,
+    RecordDeleteDialogComponent
   ],
   imports: [CommonModule, FormRoutingModule, MatDialogModule],
-  entryComponents: [AssignPermissionComponent]
+  entryComponents: [AssignPermissionComponent, RecordDeleteDialogComponent]
 })
 export class FormModule {}
