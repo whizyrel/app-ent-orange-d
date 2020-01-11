@@ -26,6 +26,10 @@
   flex-direction: column;
 }
 
+.__permission-record-items-card--container {
+  flex-wrap: wrap;
+}
+
 .__permission-record-items-card {
   height: 50px;
   box-shadow: 0 0 3px 0px var(--white-shadow);
