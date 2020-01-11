@@ -29,7 +29,7 @@ export class PermissionsComponent
   implements OnInit, AfterContentInit, AfterContentChecked {
   public rId: string;
   public permissions: Permissions[];
-  public mocks: Number[] = [1, 2, 3, 4, 5, 6];
+  public mocks: Number[] = [1, , , , , 6];
   public reloadRecords = <boolean>false;
   public permissionLevel: string;
 
