@@ -18,6 +18,20 @@ export class PermissionsService {
     private _appDetails: AppDetailsService
   ) {}
 
+  public deletePermissionRecord(id: string): Observable<object> {
+    const _url = <string>(
+      `${this._apiUrls.permissionUrls.deletePermissionRecord}/${this.getClientName}/${id}`
+    );
+
+    return this._http.delete<Object>(_url, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      observe: 'body',
+      responseType: 'json'
+    });
+  }
+
   public addPermissionRecords(body: {fid: string, id: string}): Observable<object> {
     const _url = <string>(
       `${this._apiUrls.permissionUrls.addPermissionRecord}/${this.getClientName}`
