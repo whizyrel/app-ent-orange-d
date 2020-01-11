@@ -6,11 +6,15 @@ import {
   DoCheck,
   AfterContentChecked
 } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 import { PermissionsService } from '../services/permissions.service';
+import { DialogService } from '../services/dialog.service';
 
 import { HttpResponse } from '../interfaces/http-response';
 import { PermissionRecordsProps } from '../interfaces/permissions';
+
+import { RecordDeleteDialogComponent } from '../record-delete-dialog/record-delete-dialog.component';
 
 @Component({
   selector: 'app-permission-records',
@@ -33,7 +37,10 @@ export class PermissionRecordsComponent
   public assignees: string;
   public mocks: Number[] = [1, , , , , , , , , , , 12];
 
-  constructor(private _permissions: PermissionsService) {}
+  constructor(
+    private _permissions: PermissionsService,
+    private _dialog: DialogService
+    ) { }
 
   ngOnInit() {}
   ngDoCheck(): void {  }
@@ -49,6 +56,27 @@ export class PermissionRecordsComponent
       // get list
       this.getPermissionRecords(this.id);
     }
+  }
+
+  public deleteRecord(id: string): void {
+    // show delete Dialog
+    const dialogRef: MatDialogRef<
+      RecordDeleteDialogComponent,
+      any
+      > = this._dialog.openDialog(
+        { id },
+        RecordDeleteDialogComponent,
+        {
+          width: '450px',
+          height: '240px',
+          minWidth: '450px',
+          hasBackdrop: true
+        }
+      );
+
+    dialogRef
+      .afterClosed()
+      .subscribe(() => this.getPermissionRecords(this.id));
   }
 
   private getPermissionRecords(id: string): void {
