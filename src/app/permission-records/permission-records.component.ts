@@ -1,4 +1,11 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  Input,
+  DoCheck,
+  AfterContentChecked
+} from '@angular/core';
 
 import { PermissionsService } from '../services/permissions.service';
 
@@ -16,37 +23,45 @@ import { PermissionRecordsProps } from '../interfaces/permissions';
   ]
 })
 export class PermissionRecordsComponent
-  implements OnInit, OnChanges {
+  implements OnInit, OnChanges, DoCheck, AfterContentChecked {
   @Input() id: string;
+  @Input() stat: boolean;
+  // tslint:disable-next-line: no-input-rename
+  @Input('level') permissionLevel: string;
 
   public records: Array<PermissionRecordsProps>;
   public assignees: string;
-  public mocks: Number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  public mocks: Number[] = [1, , , , , , , , , , , 12];
 
   constructor(private _permissions: PermissionsService) {}
 
   ngOnInit() {}
+  ngDoCheck(): void {  }
+
+  ngAfterContentChecked(): void {
+    if (this.stat) {
+      this.getPermissionRecords(this.id);
+    }
+  }
 
   ngOnChanges() {
     if (this.id !== undefined) {
       // get list
       this.getPermissionRecords(this.id);
-      console.log({ id: this.id });
     }
   }
 
   private getPermissionRecords(id: string): void {
     this._permissions.listPermissionRecords(id).subscribe(
       (data: HttpResponse) => {
-        data.hasOwnProperty('records') ?
-          this.records = [] :
-          this.records = data.rows;
+        data.hasOwnProperty('records')
+          ? (this.records = [])
+          : (this.records = data.rows);
 
-        this.assignees = this.records.length !== 0 ?
-          this.records
-            .map(cur => cur.forms.join(', '))
-            .join(', ') :
-          '';
+        this.assignees =
+          this.records.length !== 0
+            ? this.records.map(cur => cur.forms.join(', ')).join(', ')
+            : '';
       },
       (error: HttpResponse) => {
         console.log({ error });
