@@ -24,6 +24,8 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
   public rId: string;
   public permissions: Permissions[];
   public mocks: Number[] = [1, 2, 3, 4, 5, 6];
+  public reloadRecords = <boolean>false;
+  public permissionLevel: string;
 
   constructor(
     private _permissions: PermissionsService,
@@ -51,7 +53,7 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
       }
     );
 
-    dg.afterClosed().subscribe(() => this.getPermissionsList());
+    dg.afterClosed().subscribe(() => this.reloadRecords = true);
   }
 
   public openPermissionLevelDialog(): void {
@@ -93,6 +95,7 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
       (data: HttpResponse) => {
         this.permissions = data.permissions;
         this.rId = this.permissions[0].id;
+        this.permissionLevel = this.permissions[0].level;
       },
       (error: HttpResponse) => {
         console.log({ error });
@@ -101,7 +104,8 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
     );
   }
 
-  public setRid(id: string): void {
-    this.rId = id;
+  public setRecordProp(perm: Permissions): void {
+    this.rId = perm.id;
+    this.permissionLevel = perm.level;
   }
 }

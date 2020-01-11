@@ -5,7 +5,7 @@
   </div>
 
   <div *ngIf="permissions !== undefined; else permElseBlock" >
-    <div *ngFor="let permission of permissions" class="d-flex __list-container-items w-100" (click)="setRid(permission.id)">
+    <div *ngFor="let permission of permissions" class="d-flex __list-container-items w-100" (click)="setRecordProp(permission)">
       <div class="d-flex ml-3 my-auto __permission-list-icon">
         <span class="m-auto __bold-text">{{ permission.level.charAt(0).toUpperCase() }}</span>
       </div>
@@ -38,4 +38,4 @@
   </ng-template>
 </div>
 
-<app-permission-records *ngIf="permissions !== undefined" [id]="rId"></app-permission-records>
+<app-permission-records *ngIf="permissions !== undefined" [id]="rId" [stat]="reloadRecords" [level]="permissionLevel"></app-permission-records>
