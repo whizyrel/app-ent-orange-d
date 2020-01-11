@@ -39,6 +39,10 @@
   font-size: 12px;
 }
 
+.__permission-record-items-card i {
+  cursor: pointer;
+}
+
 .__permission-record-items-card-mock {
   background-color: #ffffff /* var(--mock-color) */;
 }
