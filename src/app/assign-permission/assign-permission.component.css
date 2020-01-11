@@ -29,6 +29,10 @@
   border-bottom: 1px solid var(--grey-white);
 }
 
+.__dialog--main__text__header i {
+  font-size: 1.2rem;
+}
+
 .__dialog--main__forms--list__container {
   overflow-y: auto;
 }
