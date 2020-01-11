@@ -10,6 +10,7 @@ import { FormDetails, FormRecords } from '../interfaces/form-details';
 
 import { AddFormPropsComponent } from '../add-form-props/add-form-props.component';
 import { DeleteFormPropDialogComponent } from '../delete-form-prop-dialog/delete-form-prop-dialog.component';
+import { DialogConfig } from '../interfaces/dialog-config';
 
 @Component({
   selector: 'app-list',
@@ -20,7 +21,7 @@ export class ListComponent implements OnInit,
 AfterContentInit, OnChanges {
   @Input() props: FormDetails;
 
-  public mocks: number[] = [1,2,3,4,5,6,7];
+  public mocks: number[] = [1, 2, 3, 4, 5, 6, 7];
   public lists: Array<FormRecords>;
 
   constructor(
@@ -69,7 +70,8 @@ AfterContentInit, OnChanges {
           key: prop.key, type: prop.type
         }
       },
-      AddFormPropsComponent
+      AddFormPropsComponent,
+      <DialogConfig>{}
     );
 
     dialogRef.afterClosed().subscribe(
@@ -85,7 +87,8 @@ AfterContentInit, OnChanges {
         add: true, edit: false,
         props: {title: this.props.title}
       },
-      AddFormPropsComponent
+      AddFormPropsComponent,
+      <DialogConfig>{}
     );
 
     dialogRef.afterClosed().subscribe(

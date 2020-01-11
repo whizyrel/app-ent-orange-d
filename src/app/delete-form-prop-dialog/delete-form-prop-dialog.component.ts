@@ -30,27 +30,27 @@ export class DeleteFormPropDialogComponent implements OnInit {
 
   private deleteProperty(id: string): void {
     this._forms
-    .deleteFormProperty(id)
-    .subscribe(
-      (data: HttpResponse) => {
-        this._snackbar.showSnackBar(
-          data.message, null,
-          {
-            duration: 20000,
-            verticalPosition: 'bottom',
-            horizontalPosition: 'right',
-            panelClass: '__mx-vw-33'
-          }
-        );
+      .deleteFormProperty(id)
+      .subscribe(
+        (data: HttpResponse) => {
+          this._snackbar.showSnackBar(
+            data.message, null,
+            {
+              duration: 20000,
+              verticalPosition: 'bottom',
+              horizontalPosition: 'right',
+              panelClass: '__mx-vw-33'
+            }
+          );
 
-        this.close();
-      },
-      (error: HttpResponse) => {
-        console.log({error});
-        this._snackbar.showSnackBar(error.error.message);
-        this.close();
-      }
-    )
+          this.close();
+        },
+        (error: HttpResponse) => {
+          console.log({ error });
+          this._snackbar.showSnackBar(error.error.message);
+          this.close();
+        }
+      );
   }
 
   public close(): void {

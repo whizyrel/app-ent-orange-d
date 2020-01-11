@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd1013dcd0f69485de9a2e4d7ebf9ed1c44150aff413c0ec4feb5b953b6a1d9a
-size 949
+import { Injectable } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { DialogConfig } from '../interfaces/dialog-config';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DialogService {
+  constructor(
+    private dialog: MatDialog
+  ) { }
+
+  public openDialog(
+    data: any,
+    comp,
+    {
+      hasBackdrop= true,
+      height = '80%',
+      minHeight = 'fit-content',
+      maxHeight = '80%',
+      width = '350px',
+      minWidth = '320px',
+      maxWidth = 'fit-content'
+    }: DialogConfig
+  ): MatDialogRef < any, any > {
+    const dialogRef: MatDialogRef<any, any> = this.dialog.open(comp, {
+      height,
+      minHeight,
+      maxHeight,
+      width,
+      minWidth,
+      maxWidth,
+      hasBackdrop,
+      data
+    });
+
+    return dialogRef;
+  }
+
+  public closeDialog(comp) {
+
+  }
+}

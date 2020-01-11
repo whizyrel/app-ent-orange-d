@@ -1,9 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
-import { PermissionsService } from '../services/permissions.service';
 import { SnackBarService } from '../services/snack-bar.service';
 import { DialogService } from '../services/dialog.service';
 
@@ -11,6 +10,7 @@ import { FormTitle } from '../interfaces/form-details';
 import { HttpResponse } from '../interfaces/http-response';
 
 import { AddFormPropsComponent } from '../add-form-props/add-form-props.component';
+import { DialogConfig } from '../interfaces/dialog-config';
 
 @Component({
   selector: 'app-add-form',
@@ -20,24 +20,20 @@ import { AddFormPropsComponent } from '../add-form-props/add-form-props.componen
 export class AddFormComponent implements OnInit {
   public addForm: FormGroup;
 
-  public action: string = 'add';
+  public action = <string>'add';
   private value: string = this.data.add ? 'add' : 'edit';
-  public permissions: any = [];
   private formDetails: FormTitle;
-  private pid: string;
 
   constructor(
     public dialogRef: MatDialogRef<AddFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
     private formBuilder: FormBuilder,
     private _forms: FormService,
-    private _permissions: PermissionsService,
     private _snackbar: SnackBarService,
     private _dialog: DialogService
   ) { }
 
   ngOnInit() {
-    this.getPermissionsList();
     this.action = this.capFirstLetter(this.value);
 
     this.initForm();
@@ -55,17 +51,24 @@ export class AddFormComponent implements OnInit {
           this._snackbar
           .showSnackBar(data.message);
 
-          if (this.data.action) {
-            this.data.action();
-          }
-
-          this.closeDialog();
+          // add permissions, add form properties dialog
           // open add form-properties dialog
-          this._dialog.openDialog(
-            {data: null},
-            AddFormPropsComponent
-            // {width: '', heminWidth: '', hasBackProps: true}
+          const dialogRef: MatDialogRef<AddFormPropsComponent> = this._dialog.openDialog(
+            {
+              add: true,
+              edit: false,
+              props: { title: this.formDetails.title }
+            },
+            AddFormPropsComponent,
+            <DialogConfig>{}
           );
+
+          dialogRef
+          .afterClosed()
+          .subscribe(
+            () => this.closeDialog()
+          );
+
           return;
         },
         (error: HttpResponse) => {
@@ -81,30 +84,6 @@ export class AddFormComponent implements OnInit {
     if (this.data.edit && this.status.title.touched) {
       this.changeFormTitle();
     }
-
-    // if (this.data.edit && this.status.permissionLevel.touched) {
-    //   this.changePermission();
-    // }
-  }
-
-  private changePermission (): void {
-    this._forms
-    .changeFormPermission({
-      permissionId: this.pid,
-      title: this.addForm.getRawValue().title
-    })
-    .subscribe(
-      (data: HttpResponse) => {
-        this.closeDialog();
-        this._snackbar
-        .showSnackBar(data.message);
-      },
-      (error: HttpResponse) => {
-        console.log({error});
-        this._snackbar
-        .showSnackBar(error.error.message);
-      }
-    );
   }
 
   private changeFormTitle (): void {
@@ -117,11 +96,6 @@ export class AddFormComponent implements OnInit {
         this.closeDialog();
         this._snackbar
         .showSnackBar(data.message);
-
-        // if permission level changed
-        if (this.status.permissionLevel.touched) {
-          this.changePermission();
-        }
       },
       (error: HttpResponse) => {
         console.log({error});
@@ -129,34 +103,12 @@ export class AddFormComponent implements OnInit {
         .showSnackBar(error.error.message);
       }
     );
-  }
-
-  private getPermissionsList(): void {
-    this._permissions
-    .listPermissions.subscribe(
-      (data: HttpResponse) => {
-        this.permissions = data.permissions;
-      },
-      (error: HttpResponse) => {
-        console.log({error});
-        this._snackbar
-        .showSnackBar(error.error.message);
-      }
-    );
-  }
-
-  public setPermissionId(id: string): void {
-    this.pid = id;
   }
 
   private initForm(): void {
     this.addForm = this.formBuilder.group({
       title: new FormControl(
         this.data.props ? this.data.props.title : '',
-        Validators.required
-      ),
-      permissionLevel: new FormControl(
-        this.data.props ? this.data.props.pl : '',
         Validators.required
       )
     });
@@ -167,14 +119,9 @@ export class AddFormComponent implements OnInit {
       titleError: () => {
         if (this.status.title.hasError('required')) {
           return 'Title field can not be empty!';
-        };
-      },
-      permissionLevelError: () => {
-        if (this.status.permissionLevel.hasError('required')) {
-          return 'Select permission level';
         }
       }
-    }
+    };
   }
 
   public get status(): any {

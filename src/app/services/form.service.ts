@@ -55,18 +55,18 @@ export class FormService {
       responseType: 'json',
     });
   }
-
-  public changeFormPermission(details: FormTitle): Observable<Object> {
-    const _url: string = `${this._apiUrls.formUrls.changePermission}/${this.getClientName}`;
-
-    return this._http.patch<Object>(_url, details, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-      observe: 'body',
-      responseType: 'json',
-    });
-  }
+  // 
+  // public changeFormPermission(details: FormTitle): Observable<Object> {
+  //   const _url: string = `${this._apiUrls.formUrls.changePermission}/${this.getClientName}`;
+  //
+  //   return this._http.patch<Object>(_url, details, {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //     }),
+  //     observe: 'body',
+  //     responseType: 'json',
+  //   });
+  // }
 
   public editFormTitle(details: FormTitle): Observable<Object> {
     const _url: string = `${this._apiUrls.formUrls.edit}/${this.getClientName}`;

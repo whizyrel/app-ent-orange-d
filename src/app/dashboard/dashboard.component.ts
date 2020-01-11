@@ -10,6 +10,7 @@ import {PaneProps} from '../interfaces/pane-props';
 import { TopbarProps } from '../interfaces/topbar-props';
 
 import { AddFormComponent } from '../add-form/add-form.component';
+import { DialogConfig } from '../interfaces/dialog-config';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +20,7 @@ import { AddFormComponent } from '../add-form/add-form.component';
 export class DashboardComponent implements OnInit {
   public sidebarLinks: Array<LinksProps>;
   public topbarLinks: Array<LinksProps>;
-  public path: string = 'form';
+  public path: string = <string>'form';
 
   private activatedComp: any;
 
@@ -28,13 +29,10 @@ export class DashboardComponent implements OnInit {
     user: false
   };
 
-  public showPane: boolean = true;
-  public showIndex: number = 0;
+  public showPane: boolean = <boolean>true;
+  public showIndex: number = <number>0;
 
-  constructor(
-    private _links: Links,
-    private _dialog: DialogService
-  ) { }
+  constructor(private _links: Links, private _dialog: DialogService) {}
 
   ngOnInit() {
     this.sidebarLinks = this._links.sidebarLinks;
@@ -46,17 +44,16 @@ export class DashboardComponent implements OnInit {
     this.topbarLinks = this._links.topbarLinks[prop.toLowerCase()];
   }
 
-  public openAddDialog():void {
-    const dg: MatDialogRef<AddFormComponent> =
-    this._dialog.openDialog(
-      {add: true, edit: false},
-      AddFormComponent
+  public openAddDialog(): void {
+    const dg: MatDialogRef<AddFormComponent> = this._dialog.openDialog(
+      { add: true, edit: false },
+      AddFormComponent,
+      <DialogConfig>{}
     );
-    dg.afterClosed().subscribe(
-      () => {
-        this.activatedComp.updateFormsList();
-      }
-    );
+
+    dg.afterClosed().subscribe(() => {
+      this.activatedComp.updateFormsList();
+    });
   }
 
   public switchPanes(choice: string) {
@@ -94,11 +91,11 @@ export class DashboardComponent implements OnInit {
   }
 
   activateRt(e) {
-    console.log({e});
+    console.log({ e });
     this.activatedComp = e;
   }
 
   deActivateRt(e) {
-    console.log({e});
+    console.log({ e });
   }
 }

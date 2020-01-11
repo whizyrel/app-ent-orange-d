@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f6dcc2c6a5487b096d403c1ffc2861145577b900d78d95bb7a754bf2590caf7
-size 441
+import { ErrorResponse } from './error-response';
+import { ClientDetails } from './client-details';
+import { FormDetails } from './form-details';
+import { Permissions, PermissionRecordsProps } from './permissions';
+
+export interface HttpResponse {
+  message?: string;
+  rows?: Array<any>;
+  forms?: Array<FormDetails>;
+  error?: ErrorResponse;
+  status?: number;
+  ok?: boolean;
+  details: ClientDetails;
+  permissions: Array<Permissions>;
+  data: ClientDetails;
+  records: Array<PermissionRecordsProps>;
+}

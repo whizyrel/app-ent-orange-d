@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3409862bb84540821993ae7b1b260887dd2bc66a5ab5b313403fa29e2c5eb856
-size 876
+import {LinksProps} from '../interfaces/links-props';
+import { TopbarProps } from '../interfaces/topbar-props';
+
+export class Links {
+
+  get topbarLinks(): TopbarProps {
+    return topbar;
+  }
+
+  get sidebarLinks(): Array<LinksProps> {
+    return sidebar;
+  }
+}
+
+const sidebar: Array<LinksProps> = [
+  {
+    href: "/",
+    iconClasses: "fa fa-home mx-auto fa-1x",
+    title: "Home",
+    tooltipSide: "right"
+  },
+  {
+    href: "/form",
+    iconClasses: "far fa-plus-square mx-auto fa-1x",
+    title: "Forms",
+    tooltipSide: "right"
+  },
+  {
+    href: "/user",
+    iconClasses: "fa fa-users mx-auto fa-1x",
+    title: "Users",
+    tooltipSide: "right"
+  }
+];
+
+const topbar: TopbarProps = {
+  forms: [
+    {title: 'list', iconClasses: 'far fa-list-alt mr-2', href: 'list'},
+    {title: 'permissions', iconClasses: 'fa fa-clipboard-list mr-2', href: 'permissions'},
+    {title: 'records', iconClasses: 'fa fa-clipboard-list mr-2', href: 'records'},
+  ],
+  users: []
+};

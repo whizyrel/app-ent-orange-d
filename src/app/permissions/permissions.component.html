@@ -1,0 +1,41 @@
+<div class="d-flex __list-container">
+  <div class="d-flex __list-container-toolbar" (click)="openPermissionLevelDialog()">
+    <i class="fas fa-plus fa-1x my-auto ml-auto mr-2 __list-container-toolbar-add-btn"></i>
+    <span class="my-auto __list-container-toolbar-text mr-4">Add a permission</span>
+  </div>
+
+  <div *ngIf="permissions !== undefined; else permElseBlock" >
+    <div *ngFor="let permission of permissions" class="d-flex __list-container-items w-100" (click)="setRecordProp(permission)">
+      <div class="d-flex ml-3 my-auto __permission-list-icon">
+        <span class="m-auto __bold-text">{{ permission.level.charAt(0).toUpperCase() }}</span>
+      </div>
+
+      <div class="ml-3 d-flex __list-container-items-main-details">
+        <span class="mb-2 mt-1 __bold-text">permission level</span>
+        <span class="mb-2 __list-container-items-main-details-title">{{ permission.level }}</span>
+      </div>
+
+      <span class="ml-auto my-auto mr-2 __bold-text" (click)="openAssignDialog(permission.id)">assign</span>
+
+      <i class="far fa-trash-alt fa-1x mr-3 my-auto __list-container-items-action-icons" (click)="openDeleteDialog(permission.id)"></i>
+    </div>
+
+    <div *ngIf="permissions.length === 0" class="d-flex py-3 w-100">
+      <span class="mx-auto bold-text">List is empty...</span>
+    </div>
+  </div>
+
+  <ng-template #permElseBlock>
+    <div *ngFor="let mock of mocks" class="d-flex __list-container-items w-100">
+      <div class="d-flex my-auto ml-3 __icon"></div>
+      <div class="ml-3 d-flex __list-container-items-main-details">
+        <div class="mt-2 mr-2 __list-container-items-main-details-title-mock"></div>
+        <div class="mt-2 mr-2 __list-container-items-main-details-list-mock"></div>
+      </div>
+      <i class="fa fa-pen mr-2 my-auto fa-1x __list-container-items-action-icons-mock"></i>
+      <i class="fas fa-trash fa-1x mr-3 my-auto __list-container-items-action-icons-mock"></i>
+    </div>
+  </ng-template>
+</div>
+
+<app-permission-records *ngIf="permissions !== undefined" [id]="rId" [stat]="reloadRecords" [level]="permissionLevel"></app-permission-records>

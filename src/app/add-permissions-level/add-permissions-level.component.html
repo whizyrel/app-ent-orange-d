@@ -1,0 +1,25 @@
+<div class="d-flex __dialog-container __br-brl __br-trl">
+  <div class="d-flex w-100 __vector-background __br-trl"></div>
+
+  <span class="__bold-text mt-3 ml-5">Add Permission Level</span>
+
+  <form [formGroup]="addPermission" class="mt-4 mx-3">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>What should this level be called?</mat-label>
+      <input matInput formControlName="level"  placeholder="Level Name">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> 
+      <mat-hint>examples are branches, regional, consolidation...</mat-hint>
+      <mat-error *ngIf="status.level.invalid"> {{ getErrorMessage.levelError() }} </mat-error>
+    </mat-form-field>
+  </form>
+
+  <div class="d-flex w-100 mt-auto __dialog-action-container __br-brl">
+    <div class="d-flex w-50 __dialog-action-btn-left __br-bl" (click)="submit()">
+      <span class="m-auto __bold-text">Add</span>
+    </div>
+
+    <div class="d-flex w-50 __dialog-action-btn-right __br-br" (click)="closeDialog()">
+      <span class="m-auto __bold-text">Cancel</span>
+    </div>
+  </div>
+</div>

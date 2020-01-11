@@ -1,0 +1,48 @@
+.__prermission-records-container {
+  background-color: var(--white);
+  margin-left: var(--pane-width);
+  position: fixed;
+  width: calc(100% - var(--pane-width) - var(--sidebar-width));
+  height: calc(100% - var(--main-nav-height) - var(--top-navbar-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.__permission-record-header {
+  height: var(--pr-header);
+  color: var(--grey);
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.__permission-record-header :nth-child(3) {
+  font-size: 12px;
+  color: var(--white-shadow);
+}
+
+.__permission-record-body {
+  margin-top: var(--pr-header);
+  flex-direction: column;
+}
+
+.__permission-record-items-card--container {
+  flex-wrap: wrap;
+}
+
+.__permission-record-items-card {
+  height: 50px;
+  box-shadow: 0 0 3px 0px var(--white-shadow);
+}
+
+.__permission-record-items-card span {
+  font-size: 12px;
+}
+
+.__permission-record-items-card i {
+  cursor: pointer;
+}
+
+.__permission-record-items-card-mock {
+  background-color: #ffffff /* var(--mock-color) */;
+}
