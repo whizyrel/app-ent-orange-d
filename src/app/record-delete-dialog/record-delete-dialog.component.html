@@ -1,3 +1,20 @@
-<p>
-  record-delete-dialog works!
-</p>
+<div class="d-flex __delete-dialog-container m-auto __br-brl __br-trl">
+  <div class="d-flex h-100 __vector-background __br-bl __br-tl">
+  </div>
+
+  <div class="d-flex __main-container">
+    <span class="__grey-text __bold-text mx-5 mt-3 text-center __dialog-title-text">Delete Confirmation</span>
+
+    <span class="d-flex mx-5 mt-3 __bold-text">Are you sure to perform this operation?</span>
+    <span class="d-flex mx-5 mt-1 __grey-text">NOTE: deleting this implies deleting other data associated to it</span>
+
+    <div class="d-flex w-100 mt-auto __dialog-action-container">
+      <div class="d-flex w-50 __dialog-action-btn-left __br-bl" (click)="performAction()">
+        <span class="m-auto __bold-text">Ok</span>
+      </div>
+      <div class="d-flex w-50 __dialog-action-btn-right __br-br" (click)="close()">
+        <span class="m-auto __bold-text">Cancel</span>
+      </div>
+    </div>
+  </div>
+</div>
