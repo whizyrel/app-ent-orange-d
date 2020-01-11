@@ -1,4 +1,9 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterContentInit,
+  AfterContentChecked
+} from '@angular/core';
 import { MatDialogRef } from '@angular/material/material';
 
 import { PermissionsService } from '../services/permissions.service';
@@ -20,7 +25,8 @@ import { AssignPermissionComponent } from '../assign-permission/assign-permissio
     './permissions.component.css'
   ]
 })
-export class PermissionsComponent implements OnInit, AfterContentInit {
+export class PermissionsComponent
+  implements OnInit, AfterContentInit, AfterContentChecked {
   public rId: string;
   public permissions: Permissions[];
   public mocks: Number[] = [1, 2, 3, 4, 5, 6];
@@ -30,30 +36,32 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
   constructor(
     private _permissions: PermissionsService,
     private _dialog: DialogService
-  ) { }
+  ) {}
 
   ngOnInit() {}
 
+  ngAfterContentChecked() {  }
+
   ngAfterContentInit() {
     this.getPermissionsList();
+    this.reloadRecords = false;
   }
 
   public openAssignDialog(id: string): void {
-    const dg: MatDialogRef<AssignPermissionComponent, any> = this._dialog.openDialog(
-      {id},
+    const dg: MatDialogRef<
       AssignPermissionComponent,
-      {
-        width: 'fit-content',
-        minWidth: '320px',
-        maxWidth: '900px',
-        minHeight: '400px',
-        height: 'auto',
-        maxHeight: '500px',
-        hasBackdrop: true,
-      }
-    );
+      any
+    > = this._dialog.openDialog({ id }, AssignPermissionComponent, {
+      width: 'fit-content',
+      minWidth: '320px',
+      maxWidth: '900px',
+      minHeight: '400px',
+      height: 'auto',
+      maxHeight: '500px',
+      hasBackdrop: true
+    });
 
-    dg.afterClosed().subscribe(() => this.reloadRecords = true);
+    dg.afterClosed().subscribe(() => (this.reloadRecords = true));
   }
 
   public openPermissionLevelDialog(): void {
@@ -76,16 +84,12 @@ export class PermissionsComponent implements OnInit, AfterContentInit {
     const dialogRef: MatDialogRef<
       PermissionsDeleteDialogComponent,
       any
-      > = this._dialog.openDialog(
-        { id },
-        PermissionsDeleteDialogComponent,
-        {
-          width: '450px',
-          height: '240px',
-          minWidth: '450px',
-          hasBackdrop: true
-        }
-      );
+    > = this._dialog.openDialog({ id }, PermissionsDeleteDialogComponent, {
+      width: '450px',
+      height: '240px',
+      minWidth: '450px',
+      hasBackdrop: true
+    });
 
     dialogRef.afterClosed().subscribe(() => this.getPermissionsList());
   }
